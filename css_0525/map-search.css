@@ -1,0 +1,39 @@
+
+
+/* --- Map ---	 */
+
+#map_large{
+	float: left;
+	margin-top:4px;
+	top: -10px;
+    box-sizing: border-box;
+	
+	width: 1078px;
+	height: 660px;
+}
+
+@media only all and (max-height: 770px) {
+  #map_large { height: 480px;  }
+
+}
+
+@media only all and (min-height: 771px) and (max-height: 1049px) {
+  #map_large { height: 750px;  }
+	/* FireFox fix */
+	@-moz-document url-prefix() {#map_large { height: 730px;  }	}   
+}
+
+
+@media only all and (min-height: 1050px) and (max-height: 1680px) {
+	#map_large { height: 900px;  }
+	/* FireFox fix */
+	@-moz-document url-prefix() {		#map_large { height: 880px;  }	}	
+}
+
+
+
+
+
+
+
+

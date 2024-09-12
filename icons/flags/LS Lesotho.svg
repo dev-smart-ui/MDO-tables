@@ -1,0 +1,25 @@
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_4812_146315" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="25" height="25">
+<circle cx="13.002" cy="12.9979" r="12.0001" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_4812_146315)">
+<rect x="1.00195" y="24.998" width="6.6667" height="24.0001" transform="rotate(-90 1.00195 24.998)" fill="#009B77"/>
+<rect x="1.00195" y="18.3313" width="10.6667" height="24.0001" transform="rotate(-90 1.00195 18.3313)" fill="#F5F7F8"/>
+<rect x="1.00195" y="7.66455" width="6.6667" height="24.0001" transform="rotate(-90 1.00195 7.66455)" fill="#004692"/>
+<mask id="mask1_4812_146315" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="10" y="11" width="6" height="7">
+<rect x="12.9258" y="17.0506" width="3.62639" height="3.62639" transform="rotate(-135 12.9258 17.0506)" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask1_4812_146315)">
+<circle cx="12.9258" cy="11.9221" r="3.62639" transform="rotate(-135 12.9258 11.9221)" fill="#31373D"/>
+<circle cx="12.9258" cy="11.9221" r="3.62639" transform="rotate(-135 12.9258 11.9221)" fill="#31373D"/>
+</g>
+<mask id="mask2_4812_146315" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="11" width="9" height="9">
+<path d="M8.93555 15.318L12.9488 11.3047L16.9621 15.318L12.9488 19.3313L8.93555 15.318Z" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask2_4812_146315)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.4823 14.4632C16.8985 13.047 16.8985 10.7509 15.4823 9.33471C14.0661 7.91852 11.77 7.91852 10.3538 9.33471C8.93762 10.7509 8.93762 13.047 10.3538 14.4632C11.77 15.8794 14.0661 15.8794 15.4823 14.4632ZM16.337 15.3179C18.2253 13.4297 18.2253 10.3682 16.337 8.47997C14.4488 6.59171 11.3873 6.59171 9.49907 8.47997C7.61081 10.3682 7.61081 13.4297 9.49907 15.3179C11.3873 17.2062 14.4488 17.2062 16.337 15.3179Z" fill="#31373D"/>
+</g>
+<rect x="12.2695" y="8.99789" width="1.33334" height="3.66668" fill="#31373D"/>
+</g>
+<rect x="1.00195" y="0.997864" width="24.0001" height="24.0001" rx="12.0001" stroke="#EDEDED"/>
+</svg>

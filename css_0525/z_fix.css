@@ -1,0 +1,60 @@
+:root{
+/* Colors */
+
+--colorLetterAnalyst: #FFFFFF;
+
+
+}
+
+.analyst{
+    position: relative;
+	font-family: "Poppins";
+}
+
+.analyst:before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 2px;
+    font-weight: 600;
+    font-size: 21px;
+    width: 33px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorLetterAnalyst);
+	font-family: "Poppins";
+}
+
+
+
+[data-value="A"]:before {content: 'A';}
+[data-value="B"]:before {content: 'B';}
+[data-value="C"]:before {content: 'C';}
+[data-value="D"]:before {content: 'D';}
+[data-value="E"]:before {content: 'E';}
+[data-value="F"]:before {content: 'F';}
+[data-value="G"]:before {content: 'G';}
+[data-value="H"]:before {content: 'H';}
+[data-value="I"]:before {content: 'I';}
+[data-value="J"]:before {content: 'J';}
+[data-value="K"]:before {content: 'K';}
+[data-value="L"]:before {content: 'L';}
+[data-value="M"]:before {content: 'M';}
+[data-value="N"]:before {content: 'N';}
+[data-value="O"]:before {content: 'O';}
+[data-value="P"]:before {content: 'P';}
+[data-value="Q"]:before {content: 'Q';}
+[data-value="R"]:before {content: 'R';}
+[data-value="S"]:before {content: 'S';}
+[data-value="T"]:before {content: 'T';}
+[data-value="U"]:before {content: 'U';}
+[data-value="V"]:before {content: 'V';}
+[data-value="W"]:before {content: 'W';}
+[data-value="X"]:before {content: 'X';}
+[data-value="Y"]:before {content: 'Y';}
+[data-value="Z"]:before {content: 'Z';}
+
+

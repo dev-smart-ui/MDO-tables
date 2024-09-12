@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./test_files/style.css">
+        <link rel="stylesheet" href="./test_files/responsive.css">
+        <link rel="stylesheet" href="./test_files/odometer.css">
+        <link rel="stylesheet" href="./test_files/aos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./test_files/css2" rel="stylesheet">
+        
+        <!-- Tailwind Scripts -->
+        <script src="./test_files/saved_resource.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors : {
+                            'primary' : {
+                                DEFAULT : '#151515',
+                                'dark' : '#151721',
+                                'light' : '#f4f4f4',
+                                'fade' : "#4673491f"
+                            },
+                            'blue' : {
+                                100 : '#02C2FF',
+                                200 : '#3F97EB',
+                                300 : '#02A1D3',
+                                400 : "#12131c"
+                            },
+                            'black' : {
+                                100 : '#858688',
+                                200 : '#5B5B5B',
+                                300 : '#000000',
+                                400 : "#0C0D11"
+                            }
+                        },
+                        screens : {
+                            'lg' : '1025px',
+                            'md' : '769px',
+                        }
+                    }
+                }
+            }
+        </script>
+    <style>/* ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-0{bottom:0px}.left-0{left:0px}.left-\[15\%\]{left:15%}.right-0{right:0px}.top-0{top:0px}.top-10{top:2.5rem}.z-0{z-index:0}.z-10{z-index:10}.z-\[9999\]{z-index:9999}.m-0{margin:0px}.my-10{margin-top:2.5rem;margin-bottom:2.5rem}.mb-5{margin-bottom:1.25rem}.block{display:block}.flex{display:flex}.hidden{display:none}.h-\[100vh\]{height:100vh}.h-\[200px\]{height:200px}.h-\[250px\]{height:250px}.h-full{height:100%}.w-1\/2{width:50%}.w-\[200px\]{width:200px}.w-\[70\%\]{width:70%}.w-full{width:100%}.snap-y{scroll-snap-type:y var(--tw-scroll-snap-strictness)}.snap-mandatory{--tw-scroll-snap-strictness:mandatory}.snap-start{scroll-snap-align:start}.scroll-py-0{scroll-padding-top:0px;scroll-padding-bottom:0px}.list-disc{list-style-type:disc}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.overflow-y-hidden{overflow-y:hidden}.overflow-y-scroll{overflow-y:scroll}.scroll-smooth{scroll-behavior:smooth}.rounded-full{border-radius:9999px}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.bg-\[\#92C53E\]{--tw-bg-opacity:1;background-color:rgb(146 197 62 / var(--tw-bg-opacity))}.bg-\[\#E7E8EC\]{--tw-bg-opacity:1;background-color:rgb(231 232 236 / var(--tw-bg-opacity))}.bg-black-400{--tw-bg-opacity:1;background-color:rgb(12 13 17 / var(--tw-bg-opacity))}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(18 19 28 / var(--tw-bg-opacity))}.bg-primary-dark{--tw-bg-opacity:1;background-color:rgb(21 23 33 / var(--tw-bg-opacity))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-\[\#5cd183\]{--tw-gradient-from:#5cd183 var(--tw-gradient-from-position);--tw-gradient-to:rgb(92 209 131 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-\[\#2c85d8\]{--tw-gradient-to:#2c85d8 var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-4{padding:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0{padding-top:0px;padding-bottom:0px}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-1{padding-bottom:0.25rem}.pb-10{padding-bottom:2.5rem}.pb-16{padding-bottom:4rem}.pb-5{padding-bottom:1.25rem}.pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pr-20{padding-right:5rem}.pt-10{padding-top:2.5rem}.pt-28{padding-top:7rem}.pt-5{padding-top:1.25rem}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extralight{font-weight:200}.font-medium{font-weight:500}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.leading-10{line-height:2.5rem}.leading-6{line-height:1.5rem}.leading-7{line-height:1.75rem}.text-\[\#93C246\]{--tw-text-opacity:1;color:rgb(147 194 70 / var(--tw-text-opacity))}.text-black-200{--tw-text-opacity:1;color:rgb(91 91 91 / var(--tw-text-opacity))}.text-blue-100{--tw-text-opacity:1;color:rgb(2 194 255 / var(--tw-text-opacity))}.text-blue-200{--tw-text-opacity:1;color:rgb(63 151 235 / var(--tw-text-opacity))}.text-primary-dark{--tw-text-opacity:1;color:rgb(21 23 33 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.opacity-25{opacity:0.25}.opacity-50{opacity:0.5}.opacity-70{opacity:0.7}.opacity-75{opacity:0.75}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}@media (min-width: 640px){.sm\:block{display:block}.sm\:hidden{display:none}.sm\:h-\[100vh\]{height:100vh}.sm\:h-\[200px\]{height:200px}.sm\:w-\[120\%\]{width:120%}.sm\:w-\[80\%\]{width:80%}.sm\:flex-row{flex-direction:row}.sm\:gap-3{gap:0.75rem}.sm\:bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.sm\:pb-10{padding-bottom:2.5rem}.sm\:pb-12{padding-bottom:3rem}.sm\:pb-16{padding-bottom:4rem}.sm\:pb-5{padding-bottom:1.25rem}.sm\:pt-28{padding-top:7rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 769px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-\[350px\]{height:350px}.md\:w-1\/2{width:50%}.md\:w-\[350px\]{width:350px}.md\:w-\[70\%\]{width:70%}.md\:px-0{padding-left:0px;padding-right:0px}.md\:pl-10{padding-left:2.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1025px){.lg\:w-1\/2{width:50%}.lg\:w-\[75\%\]{width:75%}.lg\:w-\[95\%\]{width:95%}.lg\:gap-10{gap:2.5rem}.lg\:gap-20{gap:5rem}.lg\:pb-5{padding-bottom:1.25rem}.lg\:pl-20{padding-left:5rem}.lg\:pl-8{padding-left:2rem}.lg\:pr-24{padding-right:6rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1280px){.xl\:right-0{right:0px}.xl\:top-10{top:2.5rem}.xl\:top-\[10\%\]{top:10%}.xl\:h-\[200px\]{height:200px}.xl\:h-\[400px\]{height:400px}.xl\:w-\[400px\]{width:400px}.xl\:w-\[80\%\]{width:80%}.xl\:w-\[90\%\]{width:90%}.xl\:gap-7{gap:1.75rem}.xl\:pl-48{padding-left:12rem}.xl\:text-2xl{font-size:1.5rem;line-height:2rem}.xl\:text-4xl{font-size:2.25rem;line-height:2.5rem}.xl\:text-6xl{font-size:3.75rem;line-height:1}.xl\:text-base{font-size:1rem;line-height:1.5rem}.xl\:leading-8{line-height:2rem}}@media (min-width: 1536px){.\32xl\:h-\[593px\]{height:593px}.\32xl\:w-3\/4{width:75%}.\32xl\:w-\[593px\]{width:593px}.\32xl\:gap-3{gap:0.75rem}.\32xl\:gap-40{gap:10rem}.\32xl\:p-7{padding:1.75rem}.\32xl\:py-1{padding-top:0.25rem;padding-bottom:0.25rem}.\32xl\:py-11{padding-top:2.75rem;padding-bottom:2.75rem}.\32xl\:pb-10{padding-bottom:2.5rem}.\32xl\:pb-20{padding-bottom:5rem}.\32xl\:pl-20{padding-left:5rem}.\32xl\:pl-8{padding-left:2rem}.\32xl\:pr-40{padding-right:10rem}.\32xl\:pt-10{padding-top:2.5rem}.\32xl\:text-5xl{font-size:3rem;line-height:1}.\32xl\:text-8xl{font-size:6rem;line-height:1}.\32xl\:text-lg{font-size:1.125rem;line-height:1.75rem}.\32xl\:text-sm{font-size:0.875rem;line-height:1.25rem}.\32xl\:text-xl{font-size:1.25rem;line-height:1.75rem}.\32xl\:leading-7{line-height:1.75rem}}</style></head>
+    <body class="overflow-y-hidden h-[100vh] clickup-chrome-ext_installed" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+        
+        
+        <div class="overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth h-full">
+            
+            <!-- Header -->
+            <div class="bg-black-400  sticky top-0 flex justify-center z-[9999]">
+                <div class="xl:w-[90%] lg:w-[95%] w-full px-5  justify-between md:pl-10 2xl:pl-20 py-5 hidden md:flex">
+                    <a href="https://miningcareersonline.com/#" class="text-decoration-none flex gap-6 items-center">
+                        <img src="./test_files/Logo.svg" alt="Logo" class="object-contain">
+                        <p class="font-poppins text-white opacity-50 font-normal text-sm">Mining Intelligence and News</p>
+                    </a>
+                    <div class="flex justify-between gap-10 lg:gap-20  2xl:gap-40">
+                        <div class="flex gap-5 lg:gap-10 items-center">
+                            <a href="https://miningcareersonline.com/#" class="font-poppins text-white opacity-75 font-normal text-sm text-decoration-none">Home</a>
+                            <a href="https://miningcareersonline.com/#" class="font-poppins text-white opacity-75 font-normal text-sm text-decoration-none">Contact Us</a>
+                            <a href="https://miningcareersonline.com/#" class="font-poppins text-white opacity-75 font-normal text-sm text-decoration-none">News</a>
+                            <a href="https://miningcareersonline.com/#" class="font-poppins text-white opacity-75 font-normal text-sm text-decoration-none">Database</a>
+                        </div>
+                        <div class="flex gap-6 items-center">
+                            <div class="flex gap-3 items-center">
+                                <a href="https://miningcareersonline.com/#" class="font-poppins text-white opacity-50 font-normal text-sm text-decoration-none">Sign In</a>
+                                <img src="./test_files/Login.svg" alt="Logo" class="object-contain">
+                            </div>
+                            <button class="bg-[#92C53E] text-sm font-poppins text-white font-medium py-2 px-4 rounded-md transition duration-300 text-scale">
+                                <span>
+                                    Subscribe
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="xl:w-[90%] lg:w-[95%] w-full px-5  justify-between md:pl-10 2xl:pl-20 py-5 flex md:hidden">
+                    <a href="https://miningcareersonline.com/#" class="text-decoration-none flex gap-6 items-center">
+                        <img src="./test_files/Menu.svg" alt="Logo" class="object-contain">
+                    </a>
+                    <a href="https://miningcareersonline.com/#" class="text-decoration-none flex gap-6 items-center">
+                        <img src="./test_files/Logo-Mobile.svg" alt="Logo" class="object-contain">
+                    </a>
+                    <div class="flex gap-6 items-center">
+                        <button class="bg-[#92C53E] text-sm font-poppins text-white font-medium py-2 px-4 rounded-md transition duration-300 text-scale">
+                            <span>
+                                Subscribe
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero section -->
+            <div class="bg-primary-dark py-16 sm:pb-16 pt-28 flex justify-center snap-start scroll-py-0 sm:h-[100vh] w-full">
+                <div class="flex flex-col xl:w-[80%] lg:w-[95%] w-full px-5">
+                    <div class="flex flex-col-reverse sm:flex-row justify-center items-start w-full">
+                        <div class="w-full sm:w-[120%] md:pl-10 2xl:pl-20 lg:pr-24 ">
+                            <h1 class="text-5xl sm:text-6xl md:text-6xl xl:text-6xl 2xl:text-8xl text-white uppercase font-medium font-bebus aos-init aos-animate" data-aos="fade-up" data-aos-delay="50" data-aos-duration="800" data-aos-easing="ease-in-out">
+                                <span class="text-blue-200">Discover</span> <span class="text-[#93C246]">Analyze</span> Maximize Your <br> Profit
+                            </h1>
+                            <p class="text-white font-extralight font-poppins pt-5 2xl:pt-10 sm:pb-5 2xl:pb-10 m-0 text-sm xl:text-base 2xl:text-xl leading-7 xl:leading-8 2xl:pr-40 aos-init aos-animate" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800" data-aos-easing="ease-in-out">
+                                MDO Database provides world coverage for the intelligence you need to identify and seize opportunities in mining.
+                            </p>
+                        </div>
+                        <div class="w-full text-start flex items-center relative">
+                            <div class=" w-full h-[250px] sm:h-[200px] xl:h-[200px] 2xl:h-[593px]">
+                                <!-- <img src="./assets/Globe.png" alt="" class="object-contain w-[80%]"/> -->
+                                <img src="./test_files/Globe.png" alt="" class="absolute z-10 object-contain w-[70%] sm:w-[80%] md:w-[70%] lg:w-[75%] left-[15%] xl:top-[10%] globe">
+                                <div class="h-[200px] w-[200px] md:h-[350px] md:w-[350px] xl:h-[400px] xl:w-[400px] 2xl:h-[593px] 2xl:w-[593px] bg-gradient-to-r from-[#5cd183]  opacity-25 absolute top-10 left-0  xl:top-10 xl:right-0 z-0 rounded-full blur-3xl"></div>
+                                <div class="h-[200px] w-[200px] md:h-[350px] md:w-[350px] xl:h-[400px] xl:w-[400px] 2xl:h-[593px] 2xl:w-[593px] bg-gradient-to-r from-transparent to-[#2c85d8]  opacity-25 absolute  top-0 right-0 z-0 rounded-full blur-3xl"></div>
+                                <!-- <div class="md:h-[593px] md:w-[593px] bg-gradient-to-r from-transparent to-[#2c85d8]  opacity-25 absolute  top-[-100%] left-[50%] z-0 rounded-full blur-3xl"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full 2xl:w-3/4 md:pl-10 2xl:pl-20 hidden sm:block">
+                        <h2 class="text-white font-normal font-poppins m-0 pb-5 2xl:pb-10 text-lg lg:text-xl xl:text-2xl leading-10">Mining Database in numbers</h2>
+                        <div class="flex gap-5 xl:gap-7 text-start flex-wrap">
+                            <div class="text-start">
+                                <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer1"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">9</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">9</span></span></span></span></span></div></p>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Countries
+                                </p>
+                            </div>
+                            <div class="text-start">
+                                <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer2"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></p>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Processing <br>
+                                    Technologies
+                                </p>
+                            </div>
+                            <div class="text-start">
+                                <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer3"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">4</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></p>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Commodities
+                                </p>
+                            </div>
+                            <div class="text-start">
+                                <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer4"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">4</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></p>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Heavy Mobile<br>
+                                    Equipment Models
+                                </p>
+                            </div>
+                            <div class="text-start">
+                                <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer5"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">4</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></p>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Mines and Advanced<br>
+                                    Mining Projects
+                                </p>
+                            </div>
+                            <div class="text-start">
+                                <div class="flex items-center">
+                                    <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1 odometer odometer-auto-theme" id="odometer6"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">7</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></p>
+                                    <p class="text-blue-100 font-poppins font-medium m-0 text-lg lg:text-xl xl:text-2xl pb-1">+</p>
+                                </div>
+                                <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                                    Key Contacts<br>
+                                    on Mine Sites
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Mobile Hero section -->
+            <div class="w-full sm:hidden block bg-blue-400 py-10 px-5 snap-start">
+                <h2 class="text-white font-normal font-poppins m-0 pb-10 text-2xl pr-20 leading-10">Mining Database in numbers</h2>
+                <div class="flex gap-10 text-start w-full pb-10">
+                    <div class="text-start w-1/2">
+                        <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer1mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value odometer-last-value">9</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">3</div><div class="odometer-value">7</div><div class="odometer-value">0</div><div class="odometer-value">4</div><div class="odometer-value">7</div><div class="odometer-value">0</div><div class="odometer-value">4</div><div class="odometer-value">7</div><div class="odometer-value">1</div><div class="odometer-value">4</div><div class="odometer-value">8</div><div class="odometer-value">1</div><div class="odometer-value">4</div><div class="odometer-value">8</div><div class="odometer-value">1</div><div class="odometer-value">5</div><div class="odometer-value">8</div><div class="odometer-value">1</div><div class="odometer-value">5</div><div class="odometer-value">8</div><div class="odometer-value">2</div><div class="odometer-value">5</div><div class="odometer-value">9</div><div class="odometer-value">2</div><div class="odometer-value">5</div><div class="odometer-value">9</div><div class="odometer-value">2</div><div class="odometer-value">6</div><div class="odometer-value odometer-last-value">9</div></span></span></span></span></div></p>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Countries
+                        </p>
+                    </div>
+                    <div class="text-start w-1/2">
+                        <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer2mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value odometer-last-value">1</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value odometer-last-value">2</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">4</div><div class="odometer-value">8</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">1</div><div class="odometer-value">5</div><div class="odometer-value">9</div><div class="odometer-value">3</div><div class="odometer-value">7</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">0</div><div class="odometer-value">4</div><div class="odometer-value">8</div><div class="odometer-value">2</div><div class="odometer-value">6</div><div class="odometer-value">0</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">3</div><div class="odometer-value">7</div><div class="odometer-value">1</div><div class="odometer-value">5</div><div class="odometer-value">9</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">2</div><div class="odometer-value">6</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span></div></p>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Processing 
+                            Technologies
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-10 text-start w-full pb-10">
+                    <div class="text-start w-1/2">
+                        <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer3mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value odometer-last-value">1</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value odometer-last-value">4</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">0</div><div class="odometer-value">5</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span></div></p>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Commodities
+                        </p>
+                    </div>
+                    <div class="text-start w-1/2">
+                        <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer4mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value odometer-last-value">2</div></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value odometer-last-value">4</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">8</div><div class="odometer-value">7</div><div class="odometer-value">5</div><div class="odometer-value">3</div><div class="odometer-value">1</div><div class="odometer-value">0</div><div class="odometer-value">8</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">3</div><div class="odometer-value">1</div><div class="odometer-value">9</div><div class="odometer-value">8</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">2</div><div class="odometer-value">1</div><div class="odometer-value">9</div><div class="odometer-value">7</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">2</div><div class="odometer-value">0</div><div class="odometer-value">9</div><div class="odometer-value">7</div><div class="odometer-value">5</div><div class="odometer-value">3</div><div class="odometer-value">2</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span></div></p>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Heavy Mobile
+                            Equipment Models
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-10 text-start w-full pb-10">
+                    <div class="text-start w-1/2">
+                        <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer5mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value odometer-last-value">2</div></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value odometer-last-value">4</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">8</div><div class="odometer-value">7</div><div class="odometer-value">5</div><div class="odometer-value">3</div><div class="odometer-value">1</div><div class="odometer-value">0</div><div class="odometer-value">8</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">3</div><div class="odometer-value">1</div><div class="odometer-value">9</div><div class="odometer-value">8</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">2</div><div class="odometer-value">1</div><div class="odometer-value">9</div><div class="odometer-value">7</div><div class="odometer-value">6</div><div class="odometer-value">4</div><div class="odometer-value">2</div><div class="odometer-value">0</div><div class="odometer-value">9</div><div class="odometer-value">7</div><div class="odometer-value">5</div><div class="odometer-value">3</div><div class="odometer-value">2</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">8</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">9</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">5</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">6</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value">7</div><div class="odometer-value">2</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span></div></p>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Mines and Advanced Mining Projects
+                        </p>
+                    </div>
+                    <div class="text-start w-1/2">
+                        <div class="flex items-center">
+                            <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1 odometer odometer-auto-theme odometer-animating-up odometer-animating" id="odometer6mob"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value odometer-last-value">7</div></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">2</div><div class="odometer-value">5</div><div class="odometer-value">7</div><div class="odometer-value">0</div><div class="odometer-value">2</div><div class="odometer-value">4</div><div class="odometer-value">7</div><div class="odometer-value">9</div><div class="odometer-value">2</div><div class="odometer-value">4</div><div class="odometer-value">7</div><div class="odometer-value">9</div><div class="odometer-value">1</div><div class="odometer-value">4</div><div class="odometer-value">6</div><div class="odometer-value">9</div><div class="odometer-value">1</div><div class="odometer-value">3</div><div class="odometer-value">6</div><div class="odometer-value">8</div><div class="odometer-value">1</div><div class="odometer-value">3</div><div class="odometer-value">6</div><div class="odometer-value">8</div><div class="odometer-value">0</div><div class="odometer-value">3</div><div class="odometer-value">5</div><div class="odometer-value">8</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">6</div><div class="odometer-value">2</div><div class="odometer-value">8</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">7</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">5</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">5</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">2</div><div class="odometer-value">8</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">2</div><div class="odometer-value">8</div><div class="odometer-value">4</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">5</div><div class="odometer-value">1</div><div class="odometer-value">7</div><div class="odometer-value">3</div><div class="odometer-value">9</div><div class="odometer-value">5</div><div class="odometer-value">1</div><div class="odometer-value">8</div><div class="odometer-value">4</div><div class="odometer-value">0</div><div class="odometer-value">6</div><div class="odometer-value">2</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">0</div><div class="odometer-value">1</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">0</div><div class="odometer-value">0</div><div class="odometer-value">1</div><div class="odometer-value">2</div><div class="odometer-value">2</div><div class="odometer-value">3</div><div class="odometer-value">4</div><div class="odometer-value">4</div><div class="odometer-value">5</div><div class="odometer-value">6</div><div class="odometer-value">7</div><div class="odometer-value">7</div><div class="odometer-value">8</div><div class="odometer-value">9</div><div class="odometer-value">9</div><div class="odometer-value odometer-last-value">0</div></span></span></span></span></div></p>
+                            <p class="text-blue-100 font-poppins font-medium m-0 text-3xl xl:text-4xl pb-1">+</p>
+                        </div>
+                        <p class="text-white font-poppins m-0 text-xs font-extralight leading-6">
+                            Key Contacts on Mine Sites
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Two Carousel -->
+            <div class=" pt-10 pb-5 sm:pb-12 sm:pt-28 bg-[#E7E8EC] sm:bg-white snap-start h-[100vh]">
+                <div class="flex flex-col w-full px-5 md:px-0">
+                    <div class="md:pl-10 lg:pl-20  xl:pl-48 ">
+                        <h1 class="text-xl sm:text-3xl lg:text-4xl 2xl:text-5xl text-primary-dark font-bold font-poppins">
+                            Comprehensive coverage
+                        </h1>
+                        <p class="text-black-200 font-normal font-poppins pt-5 2xl:pt-10 pb-10 lg:pb-5 2xl:pb-20  m-0 text-base 2xl:text-lg md:w-1/2 lg:w-1/2">
+                            MDO provides in-depth mining intelligence on operating mines and mining projects at PEA, PFS and Feasibility stages.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="carousel-container relative overflow-hidden sm:pb-10 pb-16 mb-5">
+                    <div class="carousel flex gap-5 justify-center items-center my-10 " id="carousel" style="transform: translateX(700px);">
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-1.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end sm:gap-3 gap-2 carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Commodity Production, Costs and Financials
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Forecast Production
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Current Production
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Historic Production
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Cash Costs
+                                    </li>
+                                    <!-- <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        All-in Sustained Costs (AISC)
+                                    </li> -->
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        All-in Costs
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mine Financials: Revenue, Income, EBITDA
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-2.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Key Mine Personnel and Workforce
+                                </p>
+                                <ul class="text-white opacity-70 list-disc 2xl:pl-8 pl-4">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-11">
+                                        More than 7,000 key decision makers at mine sites and consultants:
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        General and Engineering Managers
+                                    </li>
+                                    <!-- <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mine and Operation Managers
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mine and Plant Maintenance Managers
+                                    </li> -->
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Processing Managers
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Procurement Staff and more…
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-3.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Geology, Mineral Reserves and Resources
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Deposit Type
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mineralogy and Deposit Dimentions
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Proven and Probable Reserves
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Measured and Indicated Resources
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl active" style="background: url(&#39;./assets/carousel-bg-4.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 sm:gap-3 carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Mining Operations
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mining Methods and Technologies
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mining Scale, tpd
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Tonnes mined and processed
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Pit design details
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Hoist Shaft depth
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-5.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Heavy Mobile Equipment
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mining Methods and Technologies
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mining Scale, tpd
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Tonnes mined and processed
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Pit design details
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Hoist Shaft depth
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-6.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 sm:gap-3 carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Comminution, Crushers and Mills
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        1,200 mines and projects with crushers/mills data
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        250 models
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        1,900 units
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-7.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Mineral Processing
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Processing Technologies
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Reagents
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Recovery Technologies
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Recovery Rates
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Flowsheet Diagrams
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-8.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Project Costs and Returns
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        CapEx
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        OpEx
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Revenue
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Cash Flow
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Net Present Value (NPV)
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Interntal Rate of Return (IRR)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-9.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Project Development Timeline
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Mining Permitting Timeline
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Construction Timeline
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Production Start Date
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-10.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Water Supply and Consumption
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Water Supply Volumes and Rates
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Water Pumps and Pipelines
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Slurry Pipelines
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="carousel-item rounded-xl" style="background: url(&#39;./assets/carousel-bg-11.jpg&#39;); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <div class="flex flex-col justify-end gap-2 2xl:gap-3  carousel-inner-item rounded-xl p-4 2xl:p-7">
+                                <p class="text-lg 2xl:text-xl text-white font-medium font-poppins leading-6 2xl:leading-7">
+                                    Conveyors and Pipelines
+                                </p>
+                                <ul class="text-white opacity-70 list-disc lg:pl-8 pl-5">
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        440 mines and projects with coveyor data
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Conveyor Type and Length
+                                    </li>
+                                    <li class="text-white opacity-70 2xl:text-sm text-xs py-0 2xl:py-1">
+                                        Belt width and Motor power
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-dots absolute bottom-0 left-0 right-0">
+                        <div class="flex justify-center">
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+
+        </div>
+
+
+        <!-- Carousel scripts -->
+        <script>
+            const carousel = document.getElementById('carousel');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            let currentIndex = 5;
+            let intervalId;
+
+            function updateDots() {
+                carouselDots.forEach((button, index) => {
+                button.classList.toggle('active', index === currentIndex);
+            });
+            }
+
+            function goToItem(index) {
+                currentIndex = index;
+                updateDots();
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                // const itemWidth = carouselItems[currentIndex].offsetWidth + 20; // Width + Margin
+                // const offset = -currentIndex * itemWidth;
+                const factor = currentIndex - 5;
+                const offset = -((carouselItems[currentIndex].offsetWidth + 20) * factor);
+                carousel.style.transform = `translateX(${offset}px)`;
+
+                carouselItems.forEach((item, index) => {
+                    const distance = Math.abs(currentIndex - index);
+                    if (index === currentIndex) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            function startCarousel() {
+                intervalId = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % carouselItems.length;
+                    updateDots();
+                    updateCarousel();
+                }, 2000); // Change this value to adjust the speed
+            }
+
+            function pauseCarousel() {
+                clearInterval(intervalId);
+            }
+
+            carousel.addEventListener('mouseover', pauseCarousel);
+            carousel.addEventListener('mouseout', startCarousel);
+
+            carouselItems.forEach((item, i) => {
+                item.addEventListener('click', () => {
+                    goToItem(i);
+                });
+            });
+
+            carouselDots.forEach((item, i) => {
+                item.addEventListener('click', () => {
+                    goToItem(i);
+                });
+            });
+
+            startCarousel();
+            // function convertAndShift() {
+
+            //     const carousel = document.getElementById('carousel');
+            //     const carouselItems = carousel.querySelectorAll('.carousel-item');
+            //     const carouselDots = document.querySelectorAll('.carousel-dot');
+            //     const firstDiv = carousel.querySelector('.carousel-item');
+
+                
+            //     for (let i = 0; i < carouselItems.length - 1; i++) {
+            //         if (carouselItems[i].classList.contains('active')) {
+            //             carouselItems[i].classList.remove('active');
+            //             carouselItems[i+1].classList.add('active');
+                        
+
+            //             const factor = i - 4;
+            //             const offset = -((carouselItems[i].offsetWidth + 20) * factor);
+            //             carousel.style.transform = `translateX(${offset}px)`;
+
+            //             // Set Active dot
+            //             if (carouselDots[i].classList.contains('active')) {
+            //                 carouselDots[i].classList.remove('active');
+            //                 carouselDots[i+1].classList.add('active');
+            //             } 
+                        
+            //             // Shift the item on the 0 index to the last index
+            //             break; // Break after shifting to avoid multiple shifts
+            //         }
+            //     }
+            //     return carouselItems; // Output the updated array
+            // }
+
+            // // Call convertAndShift every 1.5 seconds
+            // setTimeout(() => {
+            //     setInterval(convertAndShift, 1500);
+            // }, 3000);
+        </script>
+
+        <!-- Counter scripts -->
+        <script src="./test_files/odometer.js.download"></script>
+        <script>
+
+            const odeometerDiv1 = document.querySelector("#odometer1")
+            const odeometerDiv2 = document.querySelector("#odometer2")
+            const odeometerDiv3 = document.querySelector("#odometer3")
+            const odeometerDiv4 = document.querySelector("#odometer4")
+            const odeometerDiv5 = document.querySelector("#odometer5")
+            const odeometerDiv6 = document.querySelector("#odometer6")
+
+            const odeometerDiv1mob = document.querySelector("#odometer1mob")
+            const odeometerDiv2mob = document.querySelector("#odometer2mob")
+            const odeometerDiv3mob = document.querySelector("#odometer3mob")
+            const odeometerDiv4mob = document.querySelector("#odometer4mob")
+            const odeometerDiv5mob = document.querySelector("#odometer5mob")
+            const odeometerDiv6mob = document.querySelector("#odometer6mob")
+            new Odometer({
+                el : odeometerDiv1
+            })
+            new Odometer({
+                el : odeometerDiv2
+            })
+            new Odometer({
+                el : odeometerDiv3
+            })
+            new Odometer({
+                el : odeometerDiv4
+            })
+            new Odometer({
+                el : odeometerDiv5
+            })
+            new Odometer({
+                el : odeometerDiv6
+            })
+
+            odeometerDiv1.innerHTML = 99
+            
+            setTimeout(() => {
+                odeometerDiv2.innerHTML = 120
+            }, 1200);
+            setTimeout(() => {
+                odeometerDiv3.innerHTML = 140
+            }, 3000);
+            setTimeout(() => {
+                odeometerDiv4.innerHTML = 2400
+            }, 4500);
+            setTimeout(() => {
+                odeometerDiv5.innerHTML = 2400
+            }, 6000);
+            setTimeout(() => {
+                odeometerDiv6.innerHTML = 7000
+            }, 7500);
+
+
+            new Odometer({
+                el : odeometerDiv1mob
+            })
+            new Odometer({
+                el : odeometerDiv2mob
+            })
+            new Odometer({
+                el : odeometerDiv3mob
+            })
+            new Odometer({
+                el : odeometerDiv4mob
+            })
+            new Odometer({
+                el : odeometerDiv5mob
+            })
+            new Odometer({
+                el : odeometerDiv6mob
+            })
+            odeometerDiv1mob.innerHTML = 99
+            
+            setTimeout(() => {
+                odeometerDiv2mob.innerHTML = 120
+            }, 1200);
+            setTimeout(() => {
+                odeometerDiv3mob.innerHTML = 140
+            }, 3000);
+            setTimeout(() => {
+                odeometerDiv4mob.innerHTML = 2400
+            }, 4500);
+            setTimeout(() => {
+                odeometerDiv5mob.innerHTML = 2400
+            }, 6000);
+            setTimeout(() => {
+                odeometerDiv6mob.innerHTML = 7000
+            }, 7500);
+        </script>
+
+        <!-- Animate on scroll scripts -->
+        <script src="./test_files/aos.js.download"></script>
+        <script>
+            AOS.init();
+
+            // You can also pass an optional settings object
+            // below listed default settings
+            AOS.init({
+                // Global settings:
+                disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+                initClassName: 'aos-init', // class applied after initialization
+                animatedClassName: 'aos-animate', // class applied on animation
+                useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+                disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+                debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+                throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+                // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+                // offset: 120, // offset (in px) from the original trigger point
+                // delay: 0, // values from 0 to 3000, with step 50ms
+                // duration: 400, // values from 0 to 3000, with step 50ms
+                // easing: 'ease', // default easing for AOS animations
+                // once: false, // whether animation should happen only once - while scrolling down
+                // mirror: false, // whether elements should animate out while scrolling past them
+                // anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+            });
+        </script>
+    
+</body></html>

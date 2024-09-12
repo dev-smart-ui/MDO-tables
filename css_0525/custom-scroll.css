@@ -1,0 +1,140 @@
+.custom-scroll {
+    position: relative;
+	
+}
+
+.search-results-container.custom-scroll {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+.custom-scroll .ps__rail-x,
+.custom-scroll .ps__rail-y {
+    z-index: 4;
+}
+
+.ps__rail-x.ps--clicking .ps__thumb-x,
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-y.ps--clicking .ps__thumb-y,
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__thumb-x,
+.ps__thumb-y {
+    background: transparent;
+}
+
+.ps__thumb-x:before,
+.ps__thumb-y:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #aaa;
+    border-radius: 6px;
+}
+
+.ps__thumb-x:before {
+    left: 8px;
+    right: 8px;
+}
+
+.search-results-container.custom-scroll .ps__rail-y {
+    /*height: calc(100% - 82px) !important;*/
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    margin: 54px 0 0 0 !important;
+}
+
+ /* -- AlexS March 16 -- top point of the scroll -- */
+ .search-results-container.custom-scroll.scroll-contacts .ps__rail-y 	{margin: 63px 0 0 0 !important;}
+ .search-results-container.custom-scroll.scroll-fleet .ps__rail-y 		{margin: 58px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-production .ps__rail-y 	{margin: 68px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-reserves .ps__rail-y 	{margin: 71px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-resources .ps__rail-y 	{margin: 71px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-pipelines .ps__rail-y 	{margin: 93px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-mining .ps__rail-y 		{margin: 103px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-timeline .ps__rail-y 	{margin: 120px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-projects .ps__rail-y 	{margin: 147px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-projects-small .ps__rail-y 	{margin: 161px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-costs .ps__rail-y 		{margin: 170px 0 0 0 !important;  }
+ 
+ /* -- AlexS Aug 15 -- */
+@media screen and (max-width: 1918px) {
+  .search-results-container.custom-scroll.scroll-contacts .ps__rail-y 	{margin: 89px 0 0 0 !important;}
+  .search-results-container.custom-scroll.scroll-resources .ps__rail-y 	{margin: 84px 0 0 0 !important;  }
+}
+
+@media screen and (max-width: 1148px) {
+  .search-results-container.custom-scroll.scroll-reserves .ps__rail-y 	{margin: 50px 0 0 0 !important;  }
+}
+
+.search-results-container.custom-scroll .ps__rail-y:hover {
+    border-bottom: 2px solid rgba(238, 238, 238, .9);
+    border-top: 2px solid rgba(238, 238, 238, .9);
+}
+
+.table-container.custom-scroll .ps__rail-y {
+    margin-bottom: 2px!important;
+}
+
+.custom-scroll.asset-profile-search  .ps__rail-y {
+    margin: 5px 0;
+}
+
+/*
+.search-results-container.custom-scroll .ps__rail-x {
+    margin-left: 298px	!important;
+}
+*/
+
+.search-results-container.custom-scroll .ps__rail-x {
+    margin-left: 298px;
+}
+
+
+
+/*-----------------------------------------*/
+
+.search-results-container.custom-scroll .ps__rail-x .ps__thumb-x {
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+.custom-autocomplete .ps__rail-y {
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+.custom-autocomplete .ps__rail-y:hover {
+    border-bottom: 2px solid rgba(238, 238, 238, .9);
+    border-top: 2px solid rgba(238, 238, 238, .9);
+}
+
+.asset-croll-container.custom-scroll .ps__rail-y {
+    margin-bottom: 4px;
+}
+
+
+@media (max-width: 767px) {
+    .search-results-container.custom-scroll .ps__rail-x {
+        margin-left: 90px !important;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .main-content.asset-profile .ps__rail-y {
+        margin: 10px 0 35px 0;
+    }
+}
+
+@media (max-width: 1919px) {
+    .search-results-container.custom-scroll .ps__rail-y {
+        margin: 82px 0 0 0 !important;
+    }
+}

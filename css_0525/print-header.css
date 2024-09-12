@@ -1,0 +1,134 @@
+.top-menu {
+  display: none;
+}
+
+.header-content {
+  background: var(--header-bg-color);
+}
+
+.header {
+  background: var(--header-bg-color);
+}
+
+.logo img {
+  background: var(--header-bg-color);
+}
+
+.top-slogan {
+  color: var(--color-white);
+}
+
+.table-container.ps--active-y th,
+.table-container.ps--active-y td {
+  width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+main .tabs {
+  display: none !important;
+}
+
+main {
+  border: none;
+}
+
+table {
+  break-after: always;
+}
+
+.table-container {
+  max-height: unset;
+}
+
+.table-container table {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+p {
+  widows: 3;
+}
+
+.main-assets {
+  min-height: 100%;
+  height: initial;
+  overflow: initial;
+}
+
+.asset-croll-container {
+  height: initial;
+  overflow: visible;
+}
+
+.custom-scroll-desktop {
+  height: initial;
+  overflow: visible;
+}
+
+#map_large {
+  break-before: always;
+}
+
+.sidebar-map {
+  height: auto;
+}
+
+#map {
+  height: 30vh;
+}
+
+.custom-marker {
+  -webkit-print-color-adjust: exact !important;   
+  color-adjust: exact !important;               
+  print-color-adjust: exact !important;  
+}
+
+.wrap-view-controls,
+.wrap-zoom-controls {
+  display: none;
+}
+
+@-moz-document url-prefix() {
+  .table-container.ps--active-y th,
+  .table-container.ps--active-y td {
+    overflow: hidden;
+    font-size: 7px;
+  }
+
+  .table-container {
+    max-height: unset;
+  }
+
+  .main-assets {
+    min-height: unset;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    /* Safari-specific styles here */
+    .table-container.ps--active-y th,
+    .table-container.ps--active-y td {
+      overflow: hidden;
+      font-size: 7px;
+    }
+  }
+
+  .table-container {
+    max-height: unset;
+  }
+
+  .main-assets {
+    min-height: unset;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@page {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

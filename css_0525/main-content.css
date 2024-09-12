@@ -1,0 +1,106 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+}
+
+.main-content:not(.iPad) {
+  height: 100dvh;
+}
+
+.main-content.iPad {
+  height: 100dvh;
+}
+
+.main-container {
+  flex-grow: 2;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  overflow: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+aside {
+  width: calc(20% - 24px);
+  /*overflow-y: hidden;*/
+  height: 100%;
+}
+
+main {
+  flex-grow: 2;
+  border-radius: 12px;
+  background: var(--color-white);
+  height: 100%;
+  width: 80%;
+  overflow: hidden;
+  border: 1px solid var(--table-border-color);
+}
+
+@media screen and (max-width: 1920px) {
+  .main-container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px;
+    gap: 15px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main-container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.875rem;
+    gap: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .main-container {
+    gap: 10px;
+    padding: 10px;
+    max-width: 1416px;
+  }
+
+  aside {
+    min-width: 220px;
+  }
+  main {
+    min-width: calc(100% - 242px);
+  }
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 1150px) {
+/* @media screen and (max-width: 1200px) { */
+  main {
+    border: none;
+    background-color: transparent;
+  }
+  .main-container {
+    margin: 0;
+    padding: 14px;
+    transition: .3s ease-in-out;
+  }
+
+  .main-content {
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    /*height: 100%;*/
+    overflow: hidden;
+    position: fixed;
+  }
+
+  body.sidebar-open,
+  body.tabs-open,
+  body.menu-open,
+  .sidebar-open .main-content,
+  .tabs-open .main-content,
+  .menu-open .main-content {
+    height: 100dvh;
+    overflow: hidden;
+  }
+}

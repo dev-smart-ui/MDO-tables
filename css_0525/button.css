@@ -1,0 +1,87 @@
+.btn {
+	font-size: 16px;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	cursor: pointer;
+}
+
+.btn.btn-disable {
+	cursor: initial;
+	background: #a7a1a1;
+	color: #ffffff;
+}
+
+.btn-rounded {
+	border-radius: 12px;
+}
+
+.btn-rounded-plus {
+	border-radius: 14px;
+}
+
+.btn.btn-blue {
+	background-color: #02a1d3;
+	color: #ffffff;
+}
+
+.btn.btn-blue:disabled,
+.btn.btn-blue:disabled:hover {
+	background-color: #a7a1a1;
+	cursor: initial;
+	pointer-events: none;
+}
+
+.btn.btn-outline-blue {
+	border: 1px solid #02A1D3;
+	color: #fff;
+}
+
+.btn.btn-blue:hover {
+	background: #03c3ff;
+}
+
+.btn.btn-size-xl {
+	width: 100%;
+	max-width: 477px;
+	height: 96px;
+}
+
+.btn-title {
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 20px;
+}
+
+.btn.btn-size-xl:hover {
+	font-size: 27px;
+}
+
+.btn.btn-outline-blue,
+.btn.btn-next {
+	width: 100%;
+	max-width: 415px;
+	height: 72px;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 20px;
+}
+
+.btn.btn-outline-blue:hover,
+.btn.btn-next:hover {
+	font-size: 24px;
+}
+
+@media screen and (max-width: 1295px) {
+	.btn.btn-size-xl {
+		max-width: 340px;
+		height: 68px;
+	}
+	.btn.btn-size-xl:hover {
+		font-size: 1.24rem;
+	}
+	.btn-title {
+		font-size: 1.115rem;
+		line-height: 0.892rem;
+	}
+}

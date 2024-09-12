@@ -1,0 +1,129 @@
+:root{
+/* Colors */
+
+--colorLetterAnalyst: #FFFFFF;
+
+
+}
+
+
+th.rotated-always {
+  vertical-align: bottom;
+  text-align: center;
+}
+
+th.rotated-always span {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: normal;
+}
+
+
+
+.analyst {
+    position: relative;
+	font-family: "Poppins";
+}
+
+.analyst:before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 2px;
+    font-weight: 600;
+    font-size: 21px;
+    width: 33px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorLetterAnalyst);
+	font-family: "Poppins";
+}
+
+.analyst-mobile {
+    position: relative;
+	font-family: "Poppins";
+}
+
+.analyst-mobile:before {
+    content: '';
+    position: absolute;
+    top: -26px;
+    left: 9px;
+    font-weight: 600;
+    font-size: 28px;
+    width: 33px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorLetterAnalyst);
+	font-family: "Poppins";
+}
+
+
+
+[data-value="A"]:before {content: 'A';}
+[data-value="B"]:before {content: 'B';}
+[data-value="C"]:before {content: 'C';}
+[data-value="D"]:before {content: 'D';}
+[data-value="E"]:before {content: 'E';}
+[data-value="F"]:before {content: 'F';}
+[data-value="G"]:before {content: 'G';}
+[data-value="H"]:before {content: 'H';}
+[data-value="I"]:before {content: 'I';}
+[data-value="J"]:before {content: 'J';}
+[data-value="K"]:before {content: 'K';}
+[data-value="L"]:before {content: 'L';}
+[data-value="M"]:before {content: 'M';}
+[data-value="N"]:before {content: 'N';}
+[data-value="O"]:before {content: 'O';}
+[data-value="P"]:before {content: 'P';}
+[data-value="Q"]:before {content: 'Q';}
+[data-value="R"]:before {content: 'R';}
+[data-value="S"]:before {content: 'S';}
+[data-value="T"]:before {content: 'T';}
+[data-value="U"]:before {content: 'U';}
+[data-value="V"]:before {content: 'V';}
+[data-value="W"]:before {content: 'W';}
+[data-value="X"]:before {content: 'X';}
+[data-value="Y"]:before {content: 'Y';}
+[data-value="Z"]:before {content: 'Z';}
+
+
+/* --- Timeline ---	 */
+
+.tmPC{background-color:#3b9bd6;background-color:#019626;}
+.tmPermitting{background-color:#ffff75;width:16px;height:6px;position:relative;top:1px;border:1px dotted black;padding-left:2px;padding-right:2x; left:30%; }
+.tmPermitting_Start{
+	background-color:#ffff75;width:6px;height:6px;position:relative;top:1px;border:1px solid black;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari 3-8 */
+	transform: rotate(45deg);	
+}
+.tmConstruction{background-color:#9eedb2;width:16px;height:3px;position:relative;top:1px;border:1px solid black;padding-left:2px;padding-right:2x; left:30%;}
+.tmConstruction_Start{
+	background-color:#91ffac;width:6px;height:6px;position:relative;top:1px;border:1px solid black; left:45%;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari 3-8 */
+	transform: rotate(45deg);	
+}
+.tmProduction{
+	background-color:#a06300;width:8px;height:8px;position:relative;top:0px; left:45%;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari 3-8 */
+	transform: rotate(45deg);
+}
+.tmBlank{width:20px;height:2px;}
+
+
+
+
+
+
+
+
+
