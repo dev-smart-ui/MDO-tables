@@ -1341,7 +1341,7 @@ function SwapHeader_Timeline() {
   var customHeader = '<tr><th class=\'asset-content\' rowspan=\'3\'><div class=\'asset-content-wrapper\'><div class=\'table-icons-block\'>';
   
   customHeader += '<button type=\'button\' id=\'export_buttons_2\' class=\'icon\' onclick="donwloadClick(1,17)">';
-  customHeader += '<img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>';
+  customHeader += '<img src="./icons/download.svg" ><img class="icon-active" src="./icons/download-active.svg" ></button>';
 
   //customHeader += '<button type="button" id="sort_table_list" class="icon" onclick="toggleActiveById(\'sort_table_list\')">';
   //customHeader += '<img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>';
