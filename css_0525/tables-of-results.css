@@ -24,6 +24,7 @@
         border-right: none !important;
 
     }
+
     /* header table  finish*/
 
     .search-results-table__asset-name {
@@ -51,6 +52,7 @@
 
 .timeline-table-wrapper {
     /* header table  styles*/
+
     .search-results-table-header th {
         font-size: 14px;
         line-height: 21px;
@@ -60,7 +62,7 @@
 .alerts-table-wrapper {
     /* header table  styles*/
 
-    .search-results-table-header th{
+    .search-results-table-header th {
         font-size: 14px;
         line-height: 21px;
     }
@@ -276,7 +278,7 @@
 
 @media screen and (max-width: 1150px) {
     .timeline-table-wrapper,
-    .alerts-table-wrapper{
+    .alerts-table-wrapper {
         .search-results-table__asset-name {
             margin-right: 5px;
         }
