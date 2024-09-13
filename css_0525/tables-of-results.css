@@ -24,7 +24,6 @@
         border-right: none !important;
 
     }
-
     /* header table  finish*/
 
     .search-results-table__asset-name {
@@ -67,7 +66,8 @@
     }
 
     .search-results-table-header tr:nth-child(2) th:not(:first-child),
-    .search-results-table-header tr:nth-child(1) th:last-child {
+    .search-results-table-header tr:nth-child(1) th:last-child,
+    .search-results-table-header tr:nth-child(1) th:first-child {
         font-size: 12px;
         font-weight: 500;
         line-height: 18px;
@@ -275,7 +275,8 @@
 }
 
 @media screen and (max-width: 1150px) {
-    .timeline-table-wrapper {
+    .timeline-table-wrapper,
+    .alerts-table-wrapper{
         .search-results-table__asset-name {
             margin-right: 5px;
         }
