@@ -1396,7 +1396,7 @@ function SwapHeader_Timeline() {
   $('[id$=GridViewSample] thead').eq(0).html(customHeader); // -- replace Dummy <thead> innerHTML with customHeader --
   //$('[id$=GridViewSample] thead').addClass('large-height'); // -- default Personnel --
   
-  $('[id$=GridViewSample] thead').addClass('timeline table-timeline-header');
+  $('[id$=GridViewSample] thead').addClass('timeline search-results-table-header');
   $("#UpdatePanel").addClass('scroll-timeline');
 
   document.dispatchEvent(tooltipTableEvent);
