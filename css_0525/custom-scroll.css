@@ -60,6 +60,7 @@
  .search-results-container.custom-scroll.scroll-pipelines .ps__rail-y 	{margin: 93px 0 0 0 !important;  }
  .search-results-container.custom-scroll.scroll-mining .ps__rail-y 		{margin: 103px 0 0 0 !important;  }
  .search-results-container.custom-scroll.scroll-timeline .ps__rail-y 	{margin: 142px 0 0 0 !important;  }
+ .search-results-container.custom-scroll.scroll-alerts .ps__rail-y  	{margin: 136px 0 0 0 !important;  }
  .search-results-container.custom-scroll.scroll-projects .ps__rail-y 	{margin: 147px 0 0 0 !important;  }
  .search-results-container.custom-scroll.scroll-projects-small .ps__rail-y 	{margin: 161px 0 0 0 !important;  }
  .search-results-container.custom-scroll.scroll-costs .ps__rail-y 		{margin: 170px 0 0 0 !important;  }

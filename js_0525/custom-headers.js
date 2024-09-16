@@ -1410,6 +1410,8 @@ function SwapHeader_Alerts() {
     setTimeout(()=>{
         SetMobileHeader("Alerts")
     }, 300)
+
+    $("#UpdatePanel").addClass('scroll-alerts');
 }
 
 
