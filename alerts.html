@@ -275,6 +275,9 @@
             } else if (vw == "10") {
                 setActiveSubTab(['mapTab'], 'btnMap', '10');
             }
+            else if (vw == "notificationTab") {
+                SwapHeader_Alerts();
+            }
 
             //$('#ctl00$hYearRef').val(selectedValue);
 
@@ -1048,7 +1051,7 @@
                 <div class="tabs">
                     <div class="mobile-only mobile-label-tab-wrapper">
                         <button type="button" id="tab_label" class="mobile-label-tab" onclick="tabsMobileToggle()">
-                            Categories
+                            Alerts
                         </button>
                         <div class="info-icon lock-tooltip">
                             <button type="button" onclick="showInfo('Table_Overview_infoVideo')">
@@ -1373,22 +1376,22 @@
 
 
                     <button type="button" id="export_buttons_1" class="icon"
-                            onclick="toggleActiveById('export_buttons_1')">
+                            onclick="donwloadClick(1,17)">
                         <img src="icons/download.svg" alt="">
                         <img class="icon-active" src="icons/download-active.svg" alt="">
                     </button>
 
-                    <button type="button" id="sort_table_list_2" class="icon" style="position:relative;left:-35px;"
+                <!--     <button type="button" id="sort_table_list_2" class="icon" style="position:relative;left:-35px;"
                             onclick="toggleActiveById('sort_table_list_2');sortClick();">
                         <img src="icons/sort.svg" alt="">
                         <img class="icon-active" src="icons/sort-active.svg" alt="">
-                    </button>
+                    </button> -->
 
-                    <button type="button" id="imgRemoveBlanks_2" class="icon"
+                    <!-- <button type="button" id="imgRemoveBlanks_2" class="icon"
                             onclick="toggleActiveById('imgRemoveBlanks_2')">
                         <img src="icons/eye.svg" alt="">
                         <img class="icon-active" src="icons/eye-active.svg" alt="">
-                    </button>
+                    </button> -->
                     <div class="custom-select select-year" id="yearOptionsMobile">
                         <!--select id="yearsOptions">
 					<option value="0">{{getYearFromNow(0)}}</option>

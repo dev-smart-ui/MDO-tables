@@ -54,7 +54,7 @@ function Clear_DownloadButtons(blanks, yr, cmd) {
 	$('#export_Pipelines').hide();
 	$('#export_Projects').hide();
 	$('#export_Timeline').hide();
-	
+
 }
 
 
@@ -1335,7 +1335,7 @@ function SwapHeader_Projects() {
 function SwapHeader_Timeline() {
 	
   Clear_UpdatePanel_CSS();
-  Clear_Buttons(1,1,1); 
+  Clear_Buttons(1,1,1);
   
 	
   var customHeader = '<tr><th class=\'asset-content\' rowspan=\'3\'><div class=\'asset-content-wrapper\'><div class=\'table-icons-block\'>';
@@ -1403,6 +1403,14 @@ function SwapHeader_Timeline() {
   
   $('#lblSearchResults').text($('#MainBody_Timeline_lblSR').text());
 };
+
+function SwapHeader_Alerts() {
+    Clear_UpdatePanel_CSS();
+
+    setTimeout(()=>{
+        SetMobileHeader("Alerts")
+    }, 300)
+}
 
 
 /**
