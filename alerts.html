@@ -95,6 +95,7 @@
     <script type="text/javascript" src="js_0525/tooltip.js"></script>
     <script type="text/javascript" src="js_0525/tooltip-table.js"></script>
     <script type="text/javascript" src="js_0525/custom-headers.js"></script>
+    <script type="text/javascript" src="js_0525/alerts-selects.js"></script>
 
     <script type="text/javascript" src="js_0525/map.js"></script>
 
@@ -213,7 +214,7 @@
             }
 
             //alert(vw + ' onready'); btnOverview
-            vw = 17;
+            vw = "notificationTab";
 
             if (vw == "1") {
                 SwapHeader_Overview();
@@ -1332,7 +1333,7 @@
                                         </li>
                                         <div class="info-icon lock-tooltip">
                                             <button type="button" onclick="showInfo('Table_Overview_infoVideo')">
-                                                <!--img src="../../icons/info.svg" alt="info"-->
+                                                <img src="../../icons/info.svg" alt="info"/>
                                             </button>
                                             <div class="tooltip-text">
                                                 <div>Click for more information</div>
@@ -4067,23 +4068,23 @@
                                     <div class="search-results-table__control-group">
                                         <div class="search-results-table__control-radio-box">
                                             <label class="search-results-table__control-group-label">
-                                                <input class="search-results-table__custom-radio" checked type="radio" name="alerts" value="daily">
+                                                <input class="search-results-table__custom-radio" data-radio-btn-alert checked type="radio" name="alerts" value="daily">
                                                 <span class="search-results-table__radio-container"></span>
                                                 Daily
                                             </label>
                                             <label class="search-results-table__control-group-label">
-                                                <input class="search-results-table__custom-radio" type="radio" name="alerts" value="weekly">
+                                                <input class="search-results-table__custom-radio" data-radio-btn-alert  type="radio" name="alerts" value="weekly">
                                                 <span class="search-results-table__radio-container"></span>
                                                 Weekly
                                             </label>
                                         </div>
                                         <div class="search-results-table__btn-box">
-                                            <button type="button" class="search-results-table__default-btn">Save Alerts</button>
+                                            <button id="saveAlerts" type="button" class="search-results-table__default-btn">Save Alerts</button>
                                         </div>
 
                                         <div class="search-results-table__select-btn-group">
-                                            <button type="button" class="search-results-table__default-btn search-results-table__select-btn">Select all</button>
-                                            <button type="button" class="search-results-table__default-btn search-results-table__select-btn">Deselect</button>
+                                            <button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="selectAll">Select all</button>
+                                            <button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="deselectAll">Deselect</button>
                                         </div>
                                     </div>
                                 </th>
@@ -4241,7 +4242,312 @@
                                 </td>
                                 <td>
                                     <label class="search-results-table__label-checkbox">
-                                        <input data-checkbox-alert="Akie ( Cardiac Creek)2" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)4" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                        <span>9</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag20.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)3" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag21.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)4" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag9.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)6" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag15.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)6" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag22.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)7" type="checkbox" class="search-results-table__custom-checkbox">
                                         <span class="search-results-table__checkbox-container"></span>
                                     </label>
                                 </td>
@@ -4281,9 +4587,802 @@
                                     </div>
                                 </td>
                                 <td>
+                                   <span>14</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag13.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)2" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
                                     <div>
                                         <img src="img/spacer.gif" alt="spacer"/>
                                     </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag4.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)8" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>8</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag23.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)9" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag24.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)11" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                   <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag5.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)12" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag7.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)13" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag12.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)2" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                   <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag25.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)13" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                   <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag3.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input data-checkbox-alert="Akie ( Cardiac Creek)14" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag1.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)15" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag2.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)16" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_yellow.svg" alt="bullet yellow"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="icons/bullet_blue.svg" alt="bullet blue"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                  <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag2.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)17" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="search-results-table__asset-column">
+                                    <div class="asset-label search-results-table__asset-info-box">
+                                        <div class="search-results-table__asset-info">
+                                            <span class="icon flag mobile-tooltip">
+                                                <img
+                                                        src="icons/flags/flag2.svg" alt="flag"/>
+                                            </span>
+                                            <span class="mobile-tooltip search-results-table__asset-name"><a
+                                                    href="/property/1445/Onaping-Depth-Project.aspx" target="_blank">Akie ( Cardiac Creek)</a></span>
+
+                                            <img class="search-results-table__img-lock" src="icons/lock.svg"
+                                                 alt="lock"/>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="search-results-table__label-checkbox">
+                                        <input checked data-checkbox-alert="Akie ( Cardiac Creek)19" type="checkbox" class="search-results-table__custom-checkbox">
+                                        <span class="search-results-table__checkbox-container"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/spacer.gif" alt="spacer"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>20</span>
                                 </td>
                             </tr>
                             </tbody>

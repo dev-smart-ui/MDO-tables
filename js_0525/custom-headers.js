@@ -1352,7 +1352,7 @@ function SwapHeader_Timeline() {
       customHeader += `<script language="javascript">
 		$(document).ready(function () {
 			// -- add Download button to headerMobile div --
-			$('#headerMobile').prepend('<button type="button" id="export_Timeline" class="icon" onclick="donwloadClick(1,17)"><img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>');
+			$('#headerMobile').prepend('<button type="button" id="export_Timeline" class="icon" onclick="donwloadClick(1,17)"><img src="./icons/download.svg" ><img class="icon-active" src="./icons/download-active.svg" ></button>');
 		});			
 	</script>`; 
 
