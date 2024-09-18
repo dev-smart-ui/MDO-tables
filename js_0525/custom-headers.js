@@ -599,7 +599,7 @@ function SwapHeader_Production() {
   customHeader += `<script language="javascript">
 		$(document).ready(function () {
 			// -- add Download button to headerMobile div --
-			$('#headerMobile').html('<button type="button" id="export_Production" class="icon" onclick="donwloadClick(1,5)"><img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>');
+			$('#headerMobile').html('<button type="button" id="export_Production" class="icon" onclick="donwloadClick(1,5)"><img src="icons/download.svg" ><img class="icon-active" src="icons/download-active.svg" ></button>');
 		});			
 	</script>`; 
 

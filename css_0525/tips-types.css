@@ -6,6 +6,7 @@
     align-items: center;
     cursor: pointer;
     position: relative;
+    line-height: 1;
 }
 
 .tips-title-img-wrap {
@@ -41,7 +42,7 @@
 .tippy-wrap{
     z-index: 9999;
     position: absolute;
-    bottom: 100%;
+    bottom: calc(100% + 9px);
     background: white;
     box-shadow: 7px 10px 20px rgba(30, 33, 48, 0.45);
     border-radius: 8px;
