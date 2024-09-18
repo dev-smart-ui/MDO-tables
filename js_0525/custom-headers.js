@@ -1454,14 +1454,16 @@ function SwapHeader_Alerts() {
     customHeader += '<span class="search-results-table__radio-container"></span>Weekly</label>';
     customHeader += '</div>'; // закрываем search-results-table__control-radio-box
 
-    customHeader += '<div class="search-results-table__btn-box">';
-    customHeader += '<button id="saveAlerts" type="button" class="search-results-table__default-btn">Save Alerts</button>';
-    customHeader += '</div>'; // закрываем search-results-table__btn-box
 
     customHeader += '<div class="search-results-table__select-btn-group">';
     customHeader += '<button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="selectAll">Select all</button>';
     customHeader += '<button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="deselectAll">Deselect</button>';
     customHeader += '</div>'; // закрываем search-results-table__select-btn-group
+
+    customHeader += '<div class="search-results-table__btn-box">';
+    customHeader += '<button id="saveAlerts" type="button" class="search-results-table__default-btn">Save Alerts</button>';
+    customHeader += '</div>'; // закрываем search-results-table__btn-box
+
 
     customHeader += '</div>'; // закрываем search-results-table__control-group
     customHeader += '</th>';
