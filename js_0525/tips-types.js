@@ -168,10 +168,7 @@ window.addEventListener('load', () => {
                         clearTimeout(timeoutId);
                     }
 
-                    const tippyWrap = element.querySelector('.tippy-wrap');
-                    if (tippyWrap) {
-                        tippyWrap.remove();
-                    }
+                    removeTips(element);
                 });
             }
 
@@ -180,9 +177,15 @@ window.addEventListener('load', () => {
 });
 
 function createTips(box, tipsInfo) {
+    // Check if the tips already exists
+    if (box.querySelector('.tippy-wrap')) {
+        return;
+    }
+
 
     const tippyBox = document.createElement('div');
     tippyBox.className = 'tippy-wrap';
+    tippyBox.style.display = 'none';
 
 
     const tippyContent = document.createElement('div');
@@ -203,7 +206,7 @@ function createTips(box, tipsInfo) {
     const arrow = document.createElement('div');
     arrow.className = 'tooltip-arrow';
 
-    // get width os text for position arrow
+    // get width of text for position arrow
 
     const targetRect = !isMobile ? box.querySelector('span').getBoundingClientRect() : box.getBoundingClientRect();
     const arrowWidth = 8; // width of arrow
@@ -215,4 +218,15 @@ function createTips(box, tipsInfo) {
     !isMobile ? box.querySelector('span').appendChild(tippyBox) : box.appendChild(tippyBox);
 
 
+    $(tippyBox).fadeIn(300);
+}
+
+
+function removeTips(box) {
+    const tippyWrap = box.querySelector('.tippy-wrap');
+    if (tippyWrap) {
+        $(tippyWrap).fadeOut(300, function() {
+            tippyWrap.remove();
+        });
+    }
 }
