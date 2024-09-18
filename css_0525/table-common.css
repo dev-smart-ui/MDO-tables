@@ -567,6 +567,7 @@ span[id*="MainBody_Contacts_GridViewSample_lblPhone_"] {
   }
 
   tbody td span {
+    display: inline-block;
     line-height: 1.2;
     max-width: 100%;
     overflow: hidden;

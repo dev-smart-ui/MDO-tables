@@ -123,7 +123,18 @@
 
     ];
 
-    const isMobile = window.innerWidth <= 1150;
+    function determineIsMobile() {
+        let match = window.matchMedia || window.msMatchMedia;
+        if(match) {
+            let mq = match("(pointer:coarse)");
+            return mq.matches;
+        }
+        return false;
+    }
+
+    const isMobile = determineIsMobile();
+
+    console.log(isMobile)
 
 
     window.addEventListener('load', () => {
@@ -138,15 +149,27 @@
 
                 if (isMobile) {
                     element.addEventListener("click", (event) => {
+                        const existingTip = element.querySelector('.tippy-wrap');
+                        if (existingTip) {
+                            removeTips(element);
+                            return;
+                        }
+
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
 
-
                         timeoutId = setTimeout(() => {
-
                             const boxForTips = event.target.closest('[data-type-tips]');
                             createTips(boxForTips, informationIconsConfig);
+
+
+                            document.addEventListener('click', function outsideClickListener(e) {
+                                if (!boxForTips.contains(e.target)) {
+                                    removeTips(boxForTips);
+                                    document.removeEventListener('click', outsideClickListener);
+                                }
+                            });
                         }, 1500);
                     });
                 } else {
@@ -186,7 +209,7 @@
 
         const tippyBox = document.createElement('div');
         tippyBox.className = 'tippy-wrap';
-        tippyBox.style.display = 'none';
+        tippyBox.style.opacity = '0';
 
 
         const tippyContent = document.createElement('div');
@@ -219,14 +242,14 @@
         !isMobile ? box.querySelector('span').appendChild(tippyBox) : box.appendChild(tippyBox);
 
 
-        $(tippyBox).fadeIn(800);
+        $(tippyBox).animate({ opacity: 1 }, 300);
     }
 
 
     function removeTips(box) {
         const tippyWrap = box.querySelector('.tippy-wrap');
         if (tippyWrap) {
-            $(tippyWrap).fadeOut(800, function () {
+            $(tippyWrap).fadeOut(300, function () {
                 tippyWrap.remove();
             });
         }
