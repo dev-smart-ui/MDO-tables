@@ -53,7 +53,6 @@
     line-height: 16px;
     text-align: center;
     max-width: 300px;
-    min-width: 140px;
     transition: all .3s ease-in-out;
 }
 
@@ -77,6 +76,10 @@
     .tips-title-img-wrap {
         min-width: 16px;
         width: 16px;
+    }
+
+    .tippy-wrap{
+        min-width: 140px;
     }
 
     .tippy-tooltip-text-link{

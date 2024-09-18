@@ -75,20 +75,20 @@ function SwapHeader_Production() {
   var customHeader = '<tr><th class=\'asset-content\' rowspan=\'2\'><div class=\'asset-content-wrapper\'><div class=\'table-icons-block\'>';
 
   customHeader += '<button type=\'button\' id=\'export_buttons_2\' class=\'icon\' onclick="toggleActiveById(\'export_buttons_2\')">';
-  customHeader += '<img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>';
+  customHeader += '<img src="icons/download.svg" ><img class="icon-active" src="icons/download-active.svg" ></button>';
 
   customHeader += '<button type="button" id="sort_table_list" class="icon" onclick="toggleActiveById(\'sort_table_list\')">';
-  customHeader += '<img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>';
+  customHeader += '<img src="icons/sort.svg" ><img class="icon-active" src="icons/sort-active.svg" ></button>';
 
   customHeader += '<button type="button" id="imgRemoveBlanks" class="icon" onclick="toggleActiveById(\'imgRemoveBlanks\')">';
-  customHeader += '<img src="../../icons/eye.svg" alt=""><img class="icon-active" src="../../icons/eye-active.svg" alt=""></button>';
+  customHeader += '<img src="icons/eye.svg" alt=""><img class="icon-active" src="icons/eye-active.svg" alt=""></button>';
 
   customHeader += 
   `<div id=\'export_buttons_modal\' class=\'export-buttons-modal\'>
-    <div><img src="../../icons/download.svg" onclick="handleDownload(1)">Location & Ownership</div>
-    <div><img src="../../icons/download.svg" onclick="handleDownload(2)">Asset Commodities</div>
-    <div><img src="../../icons/download.svg" onclick="handleDownload(3)">Deposit Types</div>
-    <div><img src="../../icons/download.svg" onclick="handleDownload(4)">Processing Technologies</div>
+    <div><img src="icons/download.svg" onclick="handleDownload(1)">Location & Ownership</div>
+    <div><img src="icons/download.svg" onclick="handleDownload(2)">Asset Commodities</div>
+    <div><img src="icons/download.svg" onclick="handleDownload(3)">Deposit Types</div>
+    <div><img src="icons/download.svg" onclick="handleDownload(4)">Processing Technologies</div>
   </div>`;
 
   customHeader += '</div>';
