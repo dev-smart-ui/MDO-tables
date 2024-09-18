@@ -134,12 +134,8 @@
 
     const isMobile = determineIsMobile();
 
-    console.log(isMobile)
-
-
     window.addEventListener('load', () => {
         let timeoutId;
-
         const typeTips = document.querySelectorAll('[data-type-tips]');
 
         typeTips.forEach(element => {
@@ -160,11 +156,8 @@
                         }
 
                         timeoutId = setTimeout(() => {
-                            console.log(event.target)
-                            console.log(event.target.closest('[data-type-tips]'))
                             const boxForTips = event.target.closest('[data-type-tips]');
                             createTips(boxForTips, informationIconsConfig);
-
 
                             document.addEventListener('click', function outsideClickListener(e) {
                                 if (!boxForTips.contains(e.target)) {
@@ -176,25 +169,23 @@
                     });
                 } else {
                     element.addEventListener("mouseover", (event) => {
-                        console.log(element);
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
 
                         timeoutId = setTimeout(() => {
-
                             const boxForTips = event.target.closest('[data-type-tips]');
-                            createTips(boxForTips, informationIconsConfig);
-                        }, 800);
+                            createTips(boxForTips, informationIconsConfig, timeoutId);
+                        }, 1500);
                     });
-
 
                     element.addEventListener("mouseout", (event) => {
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
-
-                        removeTips(element);
+                        if (!event.relatedTarget || !element.contains(event.relatedTarget)) {
+                            removeTips(element);
+                        }
                     });
                 }
 
@@ -202,21 +193,17 @@
         });
     });
 
-    function createTips(box, tipsInfo) {
-        // Check if the tips already exists
+    function createTips(box, tipsInfo, timeoutId) {
         if (box.querySelector('.tippy-wrap')) {
             return;
         }
-
 
         const tippyBox = document.createElement('div');
         tippyBox.className = 'tippy-wrap';
         tippyBox.style.opacity = '0';
 
-
         const tippyContent = document.createElement('div');
         tippyContent.className = 'tippy-content';
-
 
         const link = document.createElement('a');
         link.href = tipsInfo.tipsLink;
@@ -224,29 +211,35 @@
         link.className = 'tippy-tooltip-text-link';
         link.innerHTML = tipsInfo.tipsText;
 
-
         tippyContent.appendChild(link);
-
         tippyBox.appendChild(tippyContent);
 
         const arrow = document.createElement('div');
         arrow.className = 'tooltip-arrow';
 
-        // get width of text for position arrow
-
         const targetRect = !isMobile ? box.querySelector('span').getBoundingClientRect() : box.getBoundingClientRect();
-        const arrowWidth = 8; // width of arrow
+        const arrowWidth = 8;
 
         arrow.style.left = `${(targetRect.width / 2) - (arrowWidth / 2)}px`;
-
-
         tippyBox.appendChild(arrow);
-         box.querySelector('span').appendChild(tippyBox);
 
+        box.querySelector('span').appendChild(tippyBox);
 
         $(tippyBox).animate({ opacity: 1 }, 300);
-    }
 
+        // Add events for mouseover on the tooltip itself
+        tippyBox.addEventListener("mouseover", () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        });
+
+        tippyBox.addEventListener("mouseout", (event) => {
+            if (!event.relatedTarget || !tippyBox.contains(event.relatedTarget)) {
+                removeTips(box);
+            }
+        });
+    }
 
     function removeTips(box) {
         const tippyWrap = box.querySelector('.tippy-wrap');
