@@ -1407,11 +1407,84 @@ function SwapHeader_Timeline() {
 function SwapHeader_Alerts() {
     Clear_UpdatePanel_CSS();
 
+    //for add properly title on mobile
     setTimeout(()=>{
         SetMobileHeader("Alerts")
     }, 300)
 
+
+    var customHeader = '<tr><th class=\'asset-content\' rowspan=\'3\'><div class=\'asset-content-wrapper\'><div class=\'table-icons-block\'>';
+
+    customHeader += '<button type=\'button\' id=\'export_buttons_2\' class=\'icon\' onclick="donwloadClick(1,17)">';
+    customHeader += '<img src="./icons/download.svg" ><img class="icon-active" src="./icons/download-active.svg" ></button>';
+
+    //customHeader += '<button type="button" id="sort_table_list" class="icon" onclick="toggleActiveById(\'sort_table_list\')">';
+    //customHeader += '<img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>';
+
+    //customHeader += '<button type="button" id="imgRemoveBlanks" class="icon" onclick="toggleActiveById(\'imgRemoveBlanks\')">';
+    //customHeader += '<img src="../../icons/eye.svg" alt=""><img class="icon-active" src="../../icons/eye-active.svg" alt=""></button>';
+
+    customHeader += `<script language="javascript">
+		$(document).ready(function () {
+			// -- add Download button to headerMobile div --
+			$('#headerMobile').prepend('<button type="button" id="export_Timeline" class="icon" onclick="donwloadClick(1,17)"><img src="./icons/download.svg" ><img class="icon-active" src="./icons/download-active.svg" ></button>');
+		});			
+	</script>`;
+
+    customHeader += '</div>';
+
+    //customHeader += "<s cript>document.dispatchEvent(selectorEvent);</s cript>";
+    customHeader = '<tr>';
+    customHeader += '<th rowspan="2">Asset</th>';
+    customHeader += '<th colspan="1">Alerts</th>';
+    customHeader += '<th class="secondary-bg" colspan="2">Type</th>';
+    customHeader += '<th class="primary-bg" colspan="5">Stage</th>';
+    customHeader += '<th rowspan="2" class="secondary-bg search-results-table__flip-text search-results-table__remove-border">Life of Mine</th>';
+    customHeader += '</tr>';
+
+    customHeader += '<tr>';
+    customHeader += '<th class="search-results-table__alerts-column">';
+    customHeader += '<div class="search-results-table__control-group">';
+    customHeader += '<div class="search-results-table__control-radio-box">';
+    customHeader += '<label class="search-results-table__control-group-label">';
+    customHeader += '<input class="search-results-table__custom-radio" data-radio-btn-alert checked type="radio" name="alerts" value="daily">';
+    customHeader += '<span class="search-results-table__radio-container"></span>Daily</label>';
+    customHeader += '<label class="search-results-table__control-group-label">';
+    customHeader += '<input class="search-results-table__custom-radio" data-radio-btn-alert type="radio" name="alerts" value="weekly">';
+    customHeader += '<span class="search-results-table__radio-container"></span>Weekly</label>';
+    customHeader += '</div>'; // закрываем search-results-table__control-radio-box
+
+    customHeader += '<div class="search-results-table__btn-box">';
+    customHeader += '<button id="saveAlerts" type="button" class="search-results-table__default-btn">Save Alerts</button>';
+    customHeader += '</div>'; // закрываем search-results-table__btn-box
+
+    customHeader += '<div class="search-results-table__select-btn-group">';
+    customHeader += '<button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="selectAll">Select all</button>';
+    customHeader += '<button type="button" class="search-results-table__default-btn search-results-table__select-btn" id="deselectAll">Deselect</button>';
+    customHeader += '</div>'; // закрываем search-results-table__select-btn-group
+
+    customHeader += '</div>'; // закрываем search-results-table__control-group
+    customHeader += '</th>';
+
+    customHeader += '<th class="secondary-bg">Open Pit</th>';
+    customHeader += '<th class="secondary-bg">Underground</th>';
+    customHeader += '<th class="primary-bg">PEA, PFS, FS</th>';
+    customHeader += '<th class="primary-bg">Permitting</th>';
+    customHeader += '<th class="primary-bg">Consultation</th>';
+    customHeader += '<th class="primary-bg">Production</th>';
+    customHeader += '<th class="primary-bg">Restarting</th>';
+    customHeader += '</tr>';
+
+    $('#MainBody_Alerts_GridViewSample').eq(0).html(customHeader); // -- replace Dummy <thead> innerHTML with customHeader --
+    //$('[id$=GridViewSample] thead').addClass('large-height'); // -- default Personnel --
+
+    $('#MainBody_Alerts_GridViewSample').addClass('alerts search-results-table-header');
     $("#UpdatePanel").addClass('scroll-alerts');
+
+    document.dispatchEvent(tooltipTableEvent);
+
+    $('#lblSearchResults').text($('#MainBody_Alerts_lblSR').text());
+
 }
 
 
