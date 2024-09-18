@@ -1368,14 +1368,14 @@ function SwapHeader_Timeline() {
   customHeader += '</tr>';
   
   customHeader += '<tr>';
-  customHeader += '<th rowspan="2" class="secondary-bg rotated-always bottom-shadow"><span style="white-space:nowrap;min-width:14px;">Open Pit</span></th>';
+  customHeader += '<th rowspan="2" class="gray-bg rotated-always bottom-shadow"><span style="white-space:nowrap;min-width:14px;">Open Pit</span></th>';
   customHeader += '<th rowspan="2" class="secondary-bg rotated-always bottom-shadow"><span style="min-width:14px;">Underground</span></th>';
   
-  customHeader += '<th rowspan="2" class="primary-bg rotated-always bottom-shadow"><span style="min-width:14px;">PEA</span></th>';
-  customHeader += '<th rowspan="2" class="primary-bg rotated-always bottom-shadow"><span style="min-width:14px;">PFS</span></th>';
-  customHeader += '<th rowspan="2" class="primary-bg rotated-always bottom-shadow"><span style="min-width:14px;">Feasibility</span></th>';
+  customHeader += '<th rowspan="2" class="green-bg rotated-always bottom-shadow"><span style="min-width:14px;">PEA</span></th>';
+  customHeader += '<th rowspan="2" class="green-bg rotated-always bottom-shadow"><span style="min-width:14px;">PFS</span></th>';
+  customHeader += '<th rowspan="2" class="green-bg rotated-always bottom-shadow"><span style="min-width:14px;">Feasibility</span></th>';
   customHeader += '<th rowspan="2" class="primary-bg rotated-always bottom-shadow"><span style="min-width:14px;">Permitting</span></th>';
-  customHeader += '<th rowspan="2" class="primary-bg rotated-always bottom-shadow"><span style="min-width:14px;">Construction</span></th>';
+  customHeader += '<th rowspan="2" class="purple-bg rotated-always bottom-shadow"><span style="min-width:14px;">Construction</span></th>';
   
   customHeader += '<th colspan="4" class="secondary-bg">2023</th>';
   customHeader += '<th colspan="4" class="primary-bg">2024</th>';

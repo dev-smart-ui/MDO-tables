@@ -228,6 +228,12 @@ th.primary-bg {
 th.secondary-bg {
   background-color: var(--table-secondary-background);
 }
+th.purple-bg {
+  background-color: var(--table-purple-background);
+}
+th.green-bg {
+  background-color: var(--table-green-background);
+}
 
 th.gray-bg {
   background-color: var(--table-gray-background);

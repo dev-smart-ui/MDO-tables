@@ -53,10 +53,23 @@
 .timeline-table-wrapper {
     /* header table  styles*/
 
+
     .search-results-table-header th {
         font-size: 14px;
         line-height: 21px;
     }
+
+    .search-results-table-header tr:nth-child(2) th,
+    .search-results-table-header tr:nth-child(3) th{
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    .search-results-table-header tr:nth-child(3) th{
+        padding-top: 48px;
+    }
+
 }
 
 .alerts-table-wrapper {
