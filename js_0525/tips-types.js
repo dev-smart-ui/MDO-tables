@@ -123,7 +123,7 @@ const informationIconsConfigs = [
 ];
 
 const isMobile = window.innerWidth <= 1150;
-let activeTippyBox = null;
+
 
 window.addEventListener('load', () => {
     let timeoutId;
@@ -141,10 +141,6 @@ window.addEventListener('load', () => {
                         clearTimeout(timeoutId);
                     }
 
-                    if (activeTippyBox) {
-                        activeTippyBox.remove();
-                        activeTippyBox = null;
-                    }
 
                     timeoutId = setTimeout(() => {
 
@@ -158,10 +154,6 @@ window.addEventListener('load', () => {
                         clearTimeout(timeoutId);
                     }
 
-                    if (activeTippyBox) {
-                        activeTippyBox.remove();
-                        activeTippyBox = null;
-                    }
 
                     timeoutId = setTimeout(() => {
 
@@ -169,9 +161,19 @@ window.addEventListener('load', () => {
                         createTips(boxForTips, informationIconsConfig);
                     }, 500);
                 });
+
+
+                element.addEventListener("mouseout", (event) => {
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                    }
+
+                    const tippyWrap = element.querySelector('.tippy-wrap');
+                    if (tippyWrap) {
+                        tippyWrap.remove();
+                    }
+                });
             }
-
-
 
         }
     });
@@ -212,5 +214,5 @@ function createTips(box, tipsInfo) {
     tippyBox.appendChild(arrow);
     !isMobile ? box.querySelector('span').appendChild(tippyBox) : box.appendChild(tippyBox);
 
-    activeTippyBox = tippyBox;
+
 }
