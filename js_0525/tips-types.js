@@ -134,24 +134,44 @@ window.addEventListener('load', () => {
         let informationIconsConfigId = element.getAttribute('data-type-tips');
         let informationIconsConfig = informationIconsConfigs.find(e => e.typeName === informationIconsConfigId);
         if (informationIconsConfig) {
-             const currentEvent=isMobile?"click":"mouseover"
 
-            element.addEventListener(currentEvent, (event) => {
-                if (timeoutId) {
-                    clearTimeout(timeoutId);
-                }
+            if(isMobile){
+                element.addEventListener("click", (event) => {
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                    }
 
-                if (activeTippyBox) {
-                    activeTippyBox.remove();
-                    activeTippyBox = null;
-                }
+                    if (activeTippyBox) {
+                        activeTippyBox.remove();
+                        activeTippyBox = null;
+                    }
 
-                timeoutId = setTimeout(() => {
+                    timeoutId = setTimeout(() => {
 
-                    const boxForTips = event.target.closest('[data-type-tips]');
-                    createTips(boxForTips, informationIconsConfig);
-                }, 1500);
-            });
+                        const boxForTips = event.target.closest('[data-type-tips]');
+                        createTips(boxForTips, informationIconsConfig);
+                    }, 1500);
+                });
+            } else {
+                element.addEventListener("mouseover", (event) => {
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                    }
+
+                    if (activeTippyBox) {
+                        activeTippyBox.remove();
+                        activeTippyBox = null;
+                    }
+
+                    timeoutId = setTimeout(() => {
+
+                        const boxForTips = event.target.closest('[data-type-tips]');
+                        createTips(boxForTips, informationIconsConfig);
+                    }, 500);
+                });
+            }
+
+
 
         }
     });
@@ -182,6 +202,7 @@ function createTips(box, tipsInfo) {
     arrow.className = 'tooltip-arrow';
 
     // get width os text for position arrow
+
     const targetRect = !isMobile ? box.querySelector('span').getBoundingClientRect() : box.getBoundingClientRect();
     const arrowWidth = 8; // width of arrow
 
