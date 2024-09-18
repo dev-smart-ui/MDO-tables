@@ -683,19 +683,19 @@ function SwapHeader_Mining() {
 			$('#sort_table_list_2').css({'left':'-35px'}); 
 			
 			if (!$('#export_buttons_mining_modal').length) 
-				$('#headerMobile').prepend('<div id="export_buttons_mining_modal" class="export-buttons-modal"><div onclick="donwloadClick(1,24)"><img src="../../icons/download.svg"  id="324" />Mining Scale</div><div onclick="donwloadClick(2,24)"><img src="../../icons/download.svg"  id="424" />Metrics</div></div>');
+				$('#headerMobile').prepend('<div id="export_buttons_mining_modal" class="export-buttons-modal"><div onclick="donwloadClick(1,24)"><img src="icons/download.svg"  id="324" />Mining Scale</div><div onclick="donwloadClick(2,24)"><img src="icons/download.svg"  id="424" />Metrics</div></div>');
 			
 			if (!$('#export_Mining').length) 
-			$('#headerMobile').prepend('<button type="button" id="export_Mining" class="icon" onclick="toggleDownload(2);"><img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>');
+			$('#headerMobile').prepend('<button type="button" id="export_Mining" class="icon" onclick="toggleDownload(2);"><img src="icons/download.svg" ><img class="icon-active" src="icons/download-active.svg" ></button>');
 		
 
 			if ($('#sort_mining_mobile').length) 
 				$("#sort_mining_mobile").remove();
 			// -- re-attach 'sort_mining_mobile' button with active class, if required
 			if (window.location.href.indexOf("obc=on") >= 0)  
-				$('#headerMobile').append('<button type="button" id="sort_mining_mobile" class="icon active" onclick="toggleActiveByObject(this);sortClick(24);" style="position:absolute;left:48px;"><img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>');						
+				$('#headerMobile').append('<button type="button" id="sort_mining_mobile" class="icon active" onclick="toggleActiveByObject(this);sortClick(24);" style="position:absolute;left:48px;"><img src="icons/sort.svg" ><img class="icon-active" src="icons/sort-active.svg" ></button>');						
 			else
-				$('#headerMobile').append('<button type="button" id="sort_mining_mobile" class="icon" onclick="toggleActiveByObject(this);sortClick(24);" style="position:absolute;left:48px;"><img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>');
+				$('#headerMobile').append('<button type="button" id="sort_mining_mobile" class="icon" onclick="toggleActiveByObject(this);sortClick(24);" style="position:absolute;left:48px;"><img src="icons/sort.svg" ><img class="icon-active" src="icons/sort-active.svg" ></button>');
 			
 			
 		});			
