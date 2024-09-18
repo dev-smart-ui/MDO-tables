@@ -160,6 +160,8 @@
                         }
 
                         timeoutId = setTimeout(() => {
+                            console.log(event.target)
+                            console.log(event.target.closest('[data-type-tips]'))
                             const boxForTips = event.target.closest('[data-type-tips]');
                             createTips(boxForTips, informationIconsConfig);
 
@@ -239,7 +241,7 @@
 
 
         tippyBox.appendChild(arrow);
-        !isMobile ? box.querySelector('span').appendChild(tippyBox) : box.appendChild(tippyBox);
+         box.querySelector('span').appendChild(tippyBox);
 
 
         $(tippyBox).animate({ opacity: 1 }, 300);
