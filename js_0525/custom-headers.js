@@ -659,16 +659,16 @@ function SwapHeader_Mining() {
   //customHeader += '<img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>';
   
   customHeader += '<button type=\'button\' id=\'export_buttons_M\' class=\'icon\' onclick="toggleActiveById(\'export_buttons_M\');toggleDownload(1);">';
-  customHeader += '<img src="../../icons/download.svg" ><img class="icon-active" src="../../icons/download-active.svg" ></button>';  
+  customHeader += '<img src="icons/download.svg" ><img class="icon-active" src="icons/download-active.svg" ></button>';
   
   customHeader += 
   `<div id=\'export_buttons_modal\' class=\'export-buttons-modal\'>
-    <div onclick="donwloadClick(1,24)"><img src="../../icons/download.svg"  id="124" />Mining Scale.</div>
-    <div onclick="donwloadClick(2,24)"><img src="../../icons/download.svg"  id="224" />Metrics</div>
+    <div onclick="donwloadClick(1,24)"><img src="icons/download.svg"  id="124" />Mining Scale.</div>
+    <div onclick="donwloadClick(2,24)"><img src="icons/download.svg"  id="224" />Metrics</div>
   </div>`;
 
   customHeader += '<button type="button" id="sort_mining" class="icon" onclick="toggleActiveById(\'sort_mining\');sortClick(24);">';
-  customHeader += '<img src="../../icons/sort.svg" ><img class="icon-active" src="../../icons/sort-active.svg" ></button>';
+  customHeader += '<img src="icons/sort.svg" ><img class="icon-active" src="icons/sort-active.svg" ></button>';
 
 
   // -- not in use -- customHeader += '<button type="button" id="imgRemoveBlanks" class="icon" onclick="toggleActiveById(\'imgRemoveBlanks\')">';
