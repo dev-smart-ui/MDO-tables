@@ -100,10 +100,6 @@
         padding: 0 20px;
     }
 
-    .search-results-table__btn-box {
-
-    }
-
 
     .search-results-table__control-radio-box {
         display: flex;
@@ -117,6 +113,11 @@
     .search-results-table__control-group {
         padding: 10px 0;
     }
+
+    .search-results-table__control-group button {
+        font-family: "Poppins", sans-serif;
+    }
+
 
     .search-results-table__alerts-column {
         min-width: 198px;
