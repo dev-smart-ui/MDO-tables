@@ -1,6 +1,12 @@
 .timeline-table-wrapper,
 .alerts-table-wrapper {
-    height: 100%;
+   /* height: 100%;*/
+    /*
+
+    .search-results-table__wrap {
+        height: auto;
+    }
+    */
 
     /* header table  styles*/
 
