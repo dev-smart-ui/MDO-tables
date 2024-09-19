@@ -2,10 +2,6 @@
 .alerts-table-wrapper {
     height: 100%;
 
-    .search-results-table__wrap {
-        height: auto;
-    }
-
     /* header table  styles*/
 
     .search-results-table-header:before {
