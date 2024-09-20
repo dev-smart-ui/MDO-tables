@@ -44,7 +44,6 @@ $(window).on('resize load', debounce(() => {
   var mobileTooltips = $(".mobile-tooltip");
 
   $(mobileTooltips).each((i, element) => {
-    console.log("dsfsx")
     var parentTd = $(element).parents("td");
     var aLink = $(element).parent().find("a");
     var aLinkText = aLink.text();
