@@ -165,7 +165,7 @@
                                     document.removeEventListener('click', outsideClickListener);
                                 }
                             });
-                        }, 100);
+                        }, 200);
                     });
                 } else {
                     element.addEventListener("mouseover", (event) => {
@@ -176,7 +176,7 @@
                         timeoutId = setTimeout(() => {
                             const boxForTips = event.target.closest('[data-type-tips]');
                             createTips(boxForTips, informationIconsConfig, timeoutId);
-                        }, 100);
+                        }, 200);
                     });
 
                     element.addEventListener("mouseout", (event) => {
