@@ -275,16 +275,13 @@
 
     /* custom checkbox styles finish*/
 
-    .search-results-table__default-btn:disabled{
-        cursor: none;
-        pointer-events: none;
-        opacity: .7;
-    }
 
-    .search-results-table__default-btn.active{
+    .search-results-table__default-btn.active,
+    .search-results-table__select-btn.active{
         background: #02A1D3;
         color: white;
     }
+
 }
 
 

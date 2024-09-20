@@ -5,6 +5,7 @@ window.addEventListener('load', ()=>{
     const checkboxes = document.querySelectorAll('[data-checkbox-alert]');
     const radioBtns = document.querySelectorAll('[data-radio-btn-alert ]');
 
+
     //  for updating the state of the Save Alerts button
     function updateSaveButton() {
         let anyChecked = false;
@@ -17,10 +18,8 @@ window.addEventListener('load', ()=>{
 
         if (anyChecked) {
             saveAlertsBtn.classList.remove('active');
-            saveAlertsBtn.disabled = false;
             saveAlertsBtn.textContent = 'Save Alerts';
         } else {
-            saveAlertsBtn.disabled = true;
             saveAlertsBtn.classList.remove('active');
             saveAlertsBtn.textContent = 'Save Alerts';
         }
@@ -28,6 +27,13 @@ window.addEventListener('load', ()=>{
 
     // Logic for selecting all checkboxes
     selectAllBtn.addEventListener('click', () => {
+
+        selectAllBtn.classList.add("active")
+
+        setTimeout(() => {
+            selectAllBtn.classList.remove("active")
+        }, 500);
+
         checkboxes.forEach(checkbox => {
             checkbox.checked = true;
         });
@@ -36,6 +42,12 @@ window.addEventListener('load', ()=>{
 
     // Logic for deselecting all checkboxes
     deselectAllBtn.addEventListener('click', () => {
+
+        deselectAllBtn.classList.add("active")
+        setTimeout(() => {
+            deselectAllBtn.classList.remove("active")
+        }, 500);
+
         checkboxes.forEach(checkbox => {
             checkbox.checked = false;
         });
@@ -72,4 +84,7 @@ window.addEventListener('load', ()=>{
             updateSaveButton();
         });
     });
+
+
+
 })

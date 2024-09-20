@@ -165,7 +165,7 @@
                                     document.removeEventListener('click', outsideClickListener);
                                 }
                             });
-                        }, 1500);
+                        }, 100);
                     });
                 } else {
                     element.addEventListener("mouseover", (event) => {
@@ -176,7 +176,7 @@
                         timeoutId = setTimeout(() => {
                             const boxForTips = event.target.closest('[data-type-tips]');
                             createTips(boxForTips, informationIconsConfig, timeoutId);
-                        }, 1500);
+                        }, 100);
                     });
 
                     element.addEventListener("mouseout", (event) => {
@@ -205,9 +205,7 @@
         const tippyContent = document.createElement('div');
         tippyContent.className = 'tippy-content';
 
-        const link = document.createElement('a');
-        link.href = tipsInfo.tipsLink;
-        link.target = '_blank';
+        const link = document.createElement('span');
         link.className = 'tippy-tooltip-text-link';
         link.innerHTML = tipsInfo.tipsText;
 
