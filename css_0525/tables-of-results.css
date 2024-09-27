@@ -1,10 +1,12 @@
 .timeline-table-wrapper,
 .alerts-table-wrapper {
 
-/*    td div img{
-        margin: 0 auto;
-        display: block;
-    }*/
+    td>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 
 
     /* header table  styles*/
