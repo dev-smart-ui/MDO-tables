@@ -1,4 +1,4 @@
-[data-type-tips]{
+[data-type-tips] {
     cursor: pointer;
 }
 
@@ -12,36 +12,34 @@
 }
 
 .tips-title-img-wrap {
-    padding: 0!important;
-    margin:0 0 0 5px !important;
-    min-width: 16px;
-    width: 16px;
+    padding: 0 !important;
+    margin: 0 0 0 5px !important;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.tips-title-wrap.tips-title-wrap_top{
+.tips-title-wrap.tips-title-wrap_top {
     align-items: flex-start;
 }
 
-.tips-title-wrap_top .tips-title-img-wrap{
-    min-width: 4px;
-    width: 4px;
+.tips-title-wrap_top .tips-title-img-wrap {
+    height: 7px;
     align-items: flex-start;
     margin: 0 0 0 2px !important;
 }
-.tips-title-img-wrap_big.tips-title-img-wrap{
-    min-width: 7px;
-    width: 7px;
+
+.tips-title-img-wrap_big.tips-title-img-wrap {
+   height: 7px;
 }
 
 
-.tips-title-img-wrap img{
-    width: 100%;
+.tips-title-img-wrap img {
+   height: 100%;
 }
 
-.tippy-wrap{
+.tippy-wrap {
     z-index: 9999;
     position: absolute;
     bottom: calc(100% + 9px);
@@ -64,26 +62,21 @@
     top: 98%;
     border: 8px solid transparent;
     border-top: 8px solid white;
-    margin: 0!important;
-    padding: 0!important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.tippy-tooltip-text-link{
+.tippy-tooltip-text-link {
     font-size: 12px;
 }
 
 
 @media screen and (min-width: 1150px) {
-    .tips-title-img-wrap {
-        min-width: 16px;
-        width: 16px;
-    }
-
-    .tippy-wrap{
+    .tippy-wrap {
         min-width: 140px;
     }
 
-    .tippy-tooltip-text-link{
+    .tippy-tooltip-text-link {
         font-size: 12px;
         color: #0C0D11;
         text-decoration: none;

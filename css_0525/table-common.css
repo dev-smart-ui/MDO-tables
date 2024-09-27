@@ -296,7 +296,7 @@ th.year {
 }
 
 .phone-label {
-  padding: 6px 0px;
+  padding: 6px 0;
   display: flex;
   position:relative;
   left:-2px;
