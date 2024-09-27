@@ -46,6 +46,9 @@
 
     .search-results-table__asset-name_blur {
         filter: blur(7px);
+        -webkit-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+
     }
 
     .search-results-table__asset-info {
