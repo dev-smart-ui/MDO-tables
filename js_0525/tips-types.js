@@ -120,6 +120,37 @@
             tipsText: "Reserves unknown",
             tipsLink: "#",
         },
+        {
+            typeName: "openPitType",
+            tipsText: "openPit",
+            tipsLink: "#",
+        },
+        {
+            typeName: "permitting",
+            tipsText: "permitting",
+            tipsLink: "#",
+        },
+        {
+            typeName: "circleType",
+            tipsText: "start, PFS, Feasibility, PEA",
+            tipsLink: "#",
+        },
+        {
+            typeName: "inProgress",
+            tipsText: "in progress",
+            tipsLink: "#",
+        },
+        {
+            typeName: "finish",
+            tipsText: "finish",
+            tipsLink: "#",
+        },
+        {
+            typeName: "lock",
+            tipsText: "please subscribe",
+            tipsLink: "#",
+        },
+
 
     ];
 
@@ -215,13 +246,18 @@
         const arrow = document.createElement('div');
         arrow.className = 'tooltip-arrow';
 
-        const targetRect = !isMobile ? box.querySelector('span').getBoundingClientRect() : box.getBoundingClientRect();
+        const targetRect = !isMobile ? box.querySelector('.tips-box').getBoundingClientRect() : box.getBoundingClientRect();
         const arrowWidth = 8;
 
-        arrow.style.left = `${(targetRect.width / 2) - (arrowWidth / 2)}px`;
+        if (targetRect.width === 0) {
+            arrow.style.left = `5px`;
+        } else {
+            arrow.style.left = `${(targetRect.width / 2) - (arrowWidth / 2)}px`;
+        }
+
         tippyBox.appendChild(arrow);
 
-        box.querySelector('span').appendChild(tippyBox);
+        box.querySelector('.tips-box').appendChild(tippyBox);
 
         $(tippyBox).animate({ opacity: 1 }, 300);
 

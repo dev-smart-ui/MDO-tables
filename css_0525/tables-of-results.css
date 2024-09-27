@@ -8,21 +8,10 @@
     }
 
 
-
     /* header table  styles*/
 
     .search-results-table-header:before {
         top: 100% !important;
-    }
-    /*for safary*/
-    @media screen and (-webkit-min-device-pixel-ratio:0) {
-        .search-results-table-header_alerts:before {
-            top: 139px !important;
-        }
-
-        .search-results-table-header_timeline:before{
-            top: 132px !important;
-        }
     }
 
     .search-results-table__flip-text {
@@ -322,5 +311,17 @@
             width: 12px;
             height: 12px;
         }
+    }
+}
+
+
+/* Safari-specific hack */
+@media not all and (-webkit-min-device-pixel-ratio:0) {
+    .search-results-table-header_alerts:before {
+        top: 139px !important;
+    }
+
+    .search-results-table-header_timeline.timeline:before {
+        top: 132px !important;
     }
 }

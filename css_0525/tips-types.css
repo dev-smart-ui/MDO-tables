@@ -1,5 +1,6 @@
 [data-type-tips] {
     cursor: pointer;
+    position: relative;
 }
 
 .tips-title-wrap {
@@ -41,12 +42,13 @@
 
 .tippy-wrap {
     z-index: 9999;
+    left: 0;
     position: absolute;
     bottom: calc(100% + 9px);
     background: white;
     box-shadow: 7px 10px 20px rgba(30, 33, 48, 0.45);
     border-radius: 8px;
-    padding: 10px 0;
+    padding: 10px;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
