@@ -1439,7 +1439,7 @@ function SwapHeader_Alerts() {
     customHeader += '<th colspan="1">Alerts</th>';
     customHeader += '<th class="secondary-bg" colspan="2">Type</th>';
     customHeader += '<th class="primary-bg" colspan="5">Stage</th>';
-    customHeader += '<th rowspan="2" style="width: 40px; padding-left: 12px" class="secondary-bg rotated-always   bottom-shadow"><span style="white-space:nowrap">Life of Mine</span></th>';
+    customHeader += '<th rowspan="2" style="min-width: 40px; text-align: center" class="secondary-bg rotated-always   bottom-shadow"><span style="white-space:nowrap">Life of Mine</span></th>';
     customHeader += '</tr>';
 
     customHeader += '<tr>';
