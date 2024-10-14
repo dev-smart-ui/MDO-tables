@@ -1,12 +1,10 @@
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     const saveAlertsBtn = document.getElementById('saveAlerts');
     const selectAllBtn = document.getElementById('selectAll');
     const deselectAllBtn = document.getElementById('deselectAll');
     const checkboxes = document.querySelectorAll('[data-checkbox-alert]');
-    const radioBtns = document.querySelectorAll('[data-radio-btn-alert ]');
+    const radioBtns = document.querySelectorAll('[data-radio-btn-alert]');
 
-
-    //  for updating the state of the Save Alerts button
     function updateSaveButton() {
         let anyChecked = false;
         checkboxes.forEach(checkbox => {
@@ -14,7 +12,6 @@ window.addEventListener('load', ()=>{
                 anyChecked = true;
             }
         });
-
 
         if (anyChecked) {
             saveAlertsBtn.classList.remove('active');
@@ -25,13 +22,17 @@ window.addEventListener('load', ()=>{
         }
     }
 
-    // Logic for selecting all checkboxes
-    selectAllBtn.addEventListener('click', () => {
+    function addClickAndTouchListener(element, callback) {
+        element.addEventListener('click', callback);
+        element.addEventListener('touchstart', callback);
+    }
 
-        selectAllBtn.classList.add("active")
+    // Logic for selecting all checkboxes
+    addClickAndTouchListener(selectAllBtn, () => {
+        selectAllBtn.classList.add("active");
 
         setTimeout(() => {
-            selectAllBtn.classList.remove("active")
+            selectAllBtn.classList.remove("active");
         }, 500);
 
         checkboxes.forEach(checkbox => {
@@ -41,11 +42,11 @@ window.addEventListener('load', ()=>{
     });
 
     // Logic for deselecting all checkboxes
-    deselectAllBtn.addEventListener('click', () => {
+    addClickAndTouchListener(deselectAllBtn, () => {
+        deselectAllBtn.classList.add("active");
 
-        deselectAllBtn.classList.add("active")
         setTimeout(() => {
-            deselectAllBtn.classList.remove("active")
+            deselectAllBtn.classList.remove("active");
         }, 500);
 
         checkboxes.forEach(checkbox => {
@@ -54,11 +55,11 @@ window.addEventListener('load', ()=>{
         updateSaveButton();
     });
 
-    // Logic for deselecting all checkboxes
-    saveAlertsBtn.addEventListener('click', () => {
+    // Logic for saving selected alerts
+    addClickAndTouchListener(saveAlertsBtn, () => {
         let selectedValues = {
-            checkboxes:[],
-            radio:[],
+            checkboxes: [],
+            radio: [],
         };
         checkboxes.forEach(checkbox => {
             if (checkbox.checked) {
@@ -75,16 +76,12 @@ window.addEventListener('load', ()=>{
         console.log('Selected Alerts:', selectedValues);
         saveAlertsBtn.classList.add('active');
         saveAlertsBtn.textContent = 'Saved Alerts';
-
     });
 
-    // Updating the button state when the checkboxes state changes
+    // Update button state when checkboxes change
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             updateSaveButton();
         });
     });
-
-
-
-})
+});

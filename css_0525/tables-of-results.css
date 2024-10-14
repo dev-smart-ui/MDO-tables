@@ -1,5 +1,6 @@
 .timeline-table-wrapper,
 .alerts-table-wrapper {
+    height: 100%;
 
     td > div {
         display: flex;
