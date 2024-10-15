@@ -34,6 +34,13 @@
 .tips-title-img-wrap_big.tips-title-img-wrap {
    height: 7px;
 }
+.tips-title-wrap_top.tips-title-wrap_min-5 .tips-title-img-wrap  {
+    height: 5px;
+}
+
+.tips-title-wrap_top.tips-title-wrap_min-6 .tips-title-img-wrap  {
+    height: 6px;
+}
 
 
 .tips-title-img-wrap img {
@@ -70,6 +77,10 @@
 
 .tippy-tooltip-text-link {
     font-size: 12px;
+}
+
+.test-imgs-box{
+    display: flex;
 }
 
 
