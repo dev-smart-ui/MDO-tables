@@ -50,6 +50,7 @@
 
 .search-results-table thead .asset-content {
   z-index: 5;
+  transform: translateZ(0);
 }
 
 .search-results-table thead tr:first-child th:first-child:after {
