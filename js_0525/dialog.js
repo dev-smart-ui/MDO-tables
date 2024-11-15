@@ -15,7 +15,7 @@ const dialogEvent = new Event('dialogEvent');
             if (!$('body').hasClass('signIn-modal-active')) {
               $('.ui-widget-overlay').css('opacity', '0.6');
               $('.mdo-dialog').css('opacity', '1');
-              $('.main-content').css('filter', 'blur(3px)');
+              !$(el).data('disable-blur') && $('.main-content').css('filter', 'blur(3px)');
               $('body').addClass('modal-open');
             }
             setTableHeight();
@@ -37,7 +37,7 @@ const dialogEvent = new Event('dialogEvent');
             }
           },
           close: () => {
-            $('.main-content').css('filter', '');
+            !$(el).data('disable-blur') && $('.main-content').css('filter', '');
             $('body').removeClass('modal-open');
           }
         })

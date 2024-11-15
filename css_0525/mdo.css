@@ -76,7 +76,7 @@ td {
 
 body {
   line-height: 1;
-  color: black;
+  color: var(--body-color);
   background: var(--color-black);
 /*  transform: scale(1) !important;*/
 }
@@ -174,7 +174,7 @@ body {
 .custom-select .ui-button:focus,
 .custom-select .ui-button:active {
   background-color: var(--color-white);
-  color: var(--color-black);
+  color: var(--text-color);
   border-radius: 8px;
   border: 1px solid var(--sibebar-select-bg-color);
 
@@ -196,7 +196,8 @@ body {
   transform: translate(0, -50%);
 }
 
-.custom-select .ui-selectmenu-button-closed .ui-icon {
+.custom-select .ui-selectmenu-button-closed .ui-icon, 
+.custom-select .ui-selectmenu-button-closed span.ui-icon {
   background-image: url("../icons/triangle-down.svg") !important;
 }
 
@@ -328,6 +329,8 @@ body .ui-widget-overlay {
 .mdo-dialog {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  background: var(--modal-bg);
+  overflow: hidden;
 }
 
 body .ui-widget.ui-widget-content {
@@ -599,7 +602,7 @@ body .ui-widget.ui-widget-content.asset-profile-search {
 }
 
 body .ui-dialog .ui-dialog-titlebar {
-  color: var(--color-black);
+  color: var(--text-color);
   background: var(--color-white);
   border: none;
   padding: 28px;
@@ -619,7 +622,7 @@ body .ui-dialog .ui-dialog-titlebar-close {
   -webkit-tap-highlight-color: transparent;
 }
 
-.ui-dialog .ui-button .ui-icon {
+.ui-dialog .ui-button .ui-icon:not(.ui-selectmenu-icon) {
   background-image: url("../icons/close.svg") !important;
   background-position: left top !important;
   width: 100%;

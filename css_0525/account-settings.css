@@ -1,0 +1,380 @@
+
+
+.accountSettings {
+  display: flex;
+  flex-direction: row!important;
+  background: transparent!important;
+  overflow: hidden!important;
+  padding: 0 !important;
+}
+
+.accountSettings * {
+  font-family: "Poppins"!important;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.accountSettings button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.accountSettingsAside {
+  width: 100%;
+  max-width: 198px;
+  padding: 36px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  background: var(--modal-bg-aside);
+}
+
+.accountSettingsAside__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 8px;
+}
+
+.accountSettingsAside__info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.accountSettingsAside__info p {
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+.accountSettingsAside__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.accountSettingsAside__controls button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.accountSettingsAside__controls button.active {
+  background: var(--color-blue);
+  border-radius: 6px;
+  color: #fff;
+  pointer-events: none;
+  transition: all .2s;
+}
+
+.accountSettingsAside__controls button.active svg {
+  filter: brightness(0) invert(1);
+}
+
+.accountSettingsAside__bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 8px;
+}
+
+.accountSettingsContent {
+  width: 100%;
+}
+
+.accountSettingsContent__header {
+  padding: 21px 24px 21px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line-grey-color);
+}
+
+.accountSettingsContent__header span {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-color);
+  display: block;
+}
+
+.accountSettingsContent__header button {
+}
+
+.accountSettingsContent__tabs {
+  padding: 24px 16px 24px 40px;
+  height: 100%;
+  max-height: calc(100% - 63px);
+}
+
+.accountSettingsContent__tab {
+  display: none;
+}
+
+.accountSettingsContent__tab.active {
+  display: block;
+  height: 100%;
+  overflow: auto;
+}
+
+
+
+.accountSettingsAccount {}
+
+.accountSettingsAccount__tabs > div:not(.active) {
+  display: none;
+}
+
+.accountSettingsGroupWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.accountSettingsAccount__controls {
+  display: flex;
+  gap: 32px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding-bottom: 16px;
+}
+
+.accountSettingsAccount__controls button {
+  padding: 6px 0;
+  display: block;
+  font-size: 18px;
+  color: #8086A5;
+}
+
+.accountSettingsAccount__controls button.active {
+  border-bottom: 3px solid var(--color-blue);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.accountSettingsAccount__tabs {
+  margin-top: 16px;
+}
+
+.accountSettingsGroup {
+
+}
+
+.accountSettingsGroup__title {
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountSettingsGroup--withoutLine .accountSettingsGroup__title {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.accountSettingsGroup__title button {
+  padding: 7px 10px;
+  border: 1px solid #CFCFCF;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.accountSettingsGroup__field {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountSettingsGroup__field--col > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accountSettingsGroup__field--select > div:first-child > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.accountSettingsGroup__field--radio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.accountSettingsGroup__field--radio > div {
+  width: auto !important;
+}
+
+.accountSettingsGroup__field label:not(.checkbox), 
+.accountSettingsGroup__field label:not(.select) {
+  font-size: 12px;
+  color: #8086A5;
+}
+
+.accountSettingsGroup__field label.checkbox {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color)!important;
+}
+
+.accountSettingsGroup__field label.select {
+  font-size: 16px;
+}
+
+.accountSettingsGroup__field input {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  padding: 0;
+}
+
+.accountSettingsGroup__field > div:first-child {
+  width: 100%;
+}
+
+.accountSettingsGroup__field > div:not(.accountSettingsGroup__actions) > button {
+  padding: 7px 10px;
+  border: 1px solid #CFCFCF;
+  border-radius: 6px;
+  margin-top: 32px;
+  font-size: 12px;
+}
+
+.accountSettingsGroup__actions button {
+
+}
+
+.accountSettingsGroup .custom-select .ui-selectmenu-button {
+  padding: 16px 16px;
+  border-radius: 16px;
+}
+
+.accountSettingsGroup .custom-select .ui-selectmenu-text {
+  font-size: 16px;
+}
+
+.modal-open .ui-selectmenu-open {
+  z-index: 1010;
+}
+
+.ui-dialog[aria-describedby=Account_Settings] {
+  z-index: 1000!important;
+  padding: 0 !important;
+}
+
+.ui-dialog[aria-describedby=Account_Settings] .ui-dialog-titlebar {
+	display: none;
+}
+
+
+.radio {
+
+}
+
+.radio input {
+  display: none;
+}
+
+.radio span {
+  font-size: 16px!important;
+  color: var(--text-color)!important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.radio span::before {
+  content: '•';
+  border: 2px solid var(--radio-bullet);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--radio-bullet);
+}
+
+.radio input:checked + span {
+  font-weight: 500;
+}
+
+.radio input:checked + span::before {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+  transition: all .4s;
+}
+
+.radio--media img {
+  margin-top: 24px;
+}
+
+.accountSettingsContent__header button.back {
+  display: none;
+}
+
+
+
+@media screen and (max-width: 1150px) {
+  .accountSettingsAside, 
+  .accountSettingsContent .tabs-modal-close {
+    display: none;
+  }
+
+  #Account_Settings {
+    padding: 0 !important;
+  }
+
+  .accountSettingsContent__header {
+    padding: 24px;
+    justify-content: center;
+    position: relative;
+  }
+
+  .accountSettingsContent__header button.back {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+  
+  .accountSettingsContent__header span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .accountSettingsContent__tabs {
+    padding: 32px 24px;
+  }
+}

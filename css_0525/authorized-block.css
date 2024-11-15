@@ -52,7 +52,7 @@ ul.authorized-block > li.user {
 .dropdown label {
   position: relative;
   display: block;
-  color: var(--color-white);
+  color: var(--text-header-color);
   cursor: pointer;
   text-align: left;
   font-size: 14px;
@@ -85,7 +85,7 @@ ul.submenu {
   min-width: 100%;
   left: 0;
   padding: 12px 0 0;
-  color: var(--color-white);
+  color: var(--text-header-color);
   border-radius: 8px;
 
   display: initial !important;

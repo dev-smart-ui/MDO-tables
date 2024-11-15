@@ -1,4 +1,6 @@
-.isSignInModalPosition {
+.isSignInModalPosition, 
+.isSettingsMenuModalPosition, 
+.isSettingsItemModalPosition {
   left: 0 !important;
   right: 0;
   padding: 0;
@@ -43,7 +45,9 @@
   margin: auto;
 }
 
-#MainBody_Overview_pnlSignIn {
+#MainBody_Overview_pnlSignIn, 
+#MainBody_Overview_pnlSettings, 
+#Account_Settings {
   flex-direction: column;
   padding: 28px 94px 56px;
   background-color: var(--dropdown-item-hover);
@@ -51,7 +55,9 @@
   border-bottom-right-radius: 12px;
 }
 
-.signIn-modal-active #MainBody_Overview_pnlSignIn {
+.signIn-modal-active #MainBody_Overview_pnlSignIn, 
+.signIn-modal-active #MainBody_Overview_pnlSettings, 
+.signIn-modal-active #Account_Settings {
   display: flex;
 }
 
@@ -121,7 +127,7 @@
 }
 
 .signIn-modal-options-check:hover {
-  color: var(--color-black);
+  color: var(--text-color);
 }
 
 .signIn-modal-options-check-input {
@@ -209,7 +215,7 @@
 }
 
 .signIn-modal-button-text {
-  color: var(--color-white);
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -246,7 +252,9 @@
 @media screen and (max-width: 1150px) {
   /* @media screen and (max-width: 1200px) { */
 
-  .isSignInModalPosition {
+  .isSignInModalPosition, 
+  .isSettingsMenuModalPosition,
+  .isSettingsItemModalPosition {
     max-width: 100%;
     top: 40px !important;
     /* TODO: Hide page animation */
@@ -257,13 +265,17 @@
     /*transition: left 0.4s ease-in-out, right .4s ease-in-out, translate .4s ease-in-out, opacity .4s ease-in-out;*/
   }
 
-  body:not(.menu-open) .isSignInModalPosition {
+  body:not(.menu-open) .isSignInModalPosition, 
+  body:not(.menu-open) .isSettingsMenuModalPosition, 
+  body:not(.menu-open) .isSettingsItemModalPosition {
     max-height: 0 !important;
     height: 0 !important;
     opacity: 0;
   }
 
-  body:not(.menu-open) .isSignInModalPosition #MainBody_Overview_pnlSignIn {
+  body:not(.menu-open) .isSignInModalPosition #MainBody_Overview_pnlSignIn, 
+  body:not(.menu-open) .isSettingsMenuModalPosition #MainBody_Overview_pnlSettings, 
+  body:not(.menu-open) .isSettingsItemModalPosition #Account_Settings {
     opacity: 0 !important;
     padding: 0 !important;
   }
@@ -279,7 +291,9 @@
     visibility: hidden;
   }
 
-  .sign-in-hidden #MainBody_Overview_pnlSignIn {
+  .sign-in-hidden #MainBody_Overview_pnlSignIn, 
+  .sign-in-hidden #MainBody_Overview_pnlSettings, 
+  .sign-in-hidden #Account_Settings {
     padding: 0 !important;
   }
 
@@ -293,12 +307,15 @@
     transform: translateX(0);
   }
 
-  .signIn-modal-active .isSignInModalPosition {
+  .signIn-modal-active .isSignInModalPosition, 
+  .signIn-modal-active .isSettingsMenuModalPosition {
     visibility: visible;
     display: block !important;
   }
 
-  .isSignInModalPosition .ui-dialog-titlebar {
+  .isSignInModalPosition .ui-dialog-titlebar, 
+  .isSettingsMenuModalPosition .ui-dialog-titlebar,
+  .isSettingsItemModalPosition .ui-dialog-titlebar {
     display: none !important;
   }
 
@@ -345,11 +362,15 @@
     /*overflow: scroll*/
   }
 
-  .top-menu-nav-wrapper #MainBody_Overview_pnlSignIn {
+  .top-menu-nav-wrapper #MainBody_Overview_pnlSignIn, 
+  .top-menu-nav-wrapper #MainBody_Overview_pnlSettings, 
+  .top-menu-nav-wrapper #Account_Settings {
     display: none;
   }
 
-  #MainBody_Overview_pnlSignIn {
+  #MainBody_Overview_pnlSignIn, 
+  #MainBody_Overview_pnlSettings, 
+  #Account_Settings {
     display: flex;
     height: 100% !important;
     max-height: 100% !important;
@@ -376,6 +397,7 @@
     line-height: 20px;
     letter-spacing: 0em;
     font-family: "Poppins";
+    color: var(--text-color);
   }
 
   .signIn-modal-fields {
@@ -384,6 +406,8 @@
 
   .signIn-modal-fields-input {
     border: 1px solid var(--sibebar-select-bg-color);
+    background: var(--input-bg);
+    color: var(--text-color);
   }
 
   .signIn-modal-options {
@@ -460,7 +484,7 @@
     background-color: var(--subscribe-btn-color);
     border: 2px solid var(--subscribe-btn-color);
 
-    color: var(--color-white) !important;
+    color: #fff !important;
   }
 
   .signIn-modal-active .signIn-modal-button-demo,

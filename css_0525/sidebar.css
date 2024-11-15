@@ -83,7 +83,7 @@
   right: 0;
   top: 0;
   height: 30px;
-  background: linear-gradient(to bottom, #fafafa, #fafafa 40%, transparent);
+  background: linear-gradient(to bottom, var(--custom-scroll-gradient), var(--custom-scroll-gradient) 40%, transparent);
 }
 
 .search-criteria .custom-scroll:after {
@@ -128,6 +128,8 @@
   border-radius: 8px;
   border: 1px solid var(--sibebar-select-bg-color);
   height: 40px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
 
   transition-property: transform, background-color, border;
   transition-duration: 0.3s;
@@ -175,6 +177,19 @@
   padding: 0 12px 16px 12px;
 }
 
+.sidebar-buttons-block-top {
+  display: none;
+}
+
+.sidebar-wrapper[data-settings-value="top"] .sidebar-buttons-block-top {
+  display: flex;
+  padding: 0 0 16px 0;
+}
+
+.sidebar-wrapper[data-settings-value="top"] .sidebar-buttons-block-bottom {
+  display: none;
+}
+
 .sidebar-buttons-block button {
   border-radius: 6px;
   text-align: center;
@@ -194,7 +209,7 @@
 }
 
 .sidebar-buttons-block .btn-reset:hover {
-  background-color: #ededed;
+  background-color: var(--button_hover);
 }
 
 .sidebar-buttons-block .btn-reset:active {
@@ -320,7 +335,7 @@ fieldset .mdo-checkbox {
   left: 0;
   position: absolute;
   border-radius: 4px;
-  border: 2px solid #CFCFCF;
+  border: 2px solid var(--sibebar-select-bg-color);
   transition: all .25s ease-in-out;
   width: 14px;
   height: 14px;
@@ -401,7 +416,7 @@ fieldset .mdo-checkbox {
 
 .sidebar-autocomplete .btn span,
 #btnReset.btn span {
-  color: var(--color-black);
+  color: var(--text-color);
 }
 
 .tippy-box {

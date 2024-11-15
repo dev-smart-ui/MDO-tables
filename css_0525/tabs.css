@@ -20,15 +20,54 @@
 }
 
 .tabs-sub-menu {
-  /* height: 100%; */
   display: flex;
-  flex-wrap: wrap;
   position: absolute;
   padding: 6px 10px;
   left: 0;
   right: 0;
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--table-border-color);
+  max-width: 100%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tabs-sub-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.list-menu[data-settings-value="middle"] .tabs-sub-menu {
+  right: unset;
+  left: unset;
+  width: max-content;
+}
+
+.list-menu[data-settings-value="middle"] .open::after, 
+.list-menu[data-settings-value="middle"] .hovered::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  max-height: 34px;
+  /* border-bottom: 1px solid var(--table-border-color); */
+  z-index: -1;
+}
+
+.list-menu[data-settings-value="middle"] .open {
+  z-index: 11;
+}
+
+.list-menu[data-settings-value="middle"] .hovered {
+  z-index: 12;
+}
+
+.list-menu[data-settings-value="middle"] .open li, 
+.list-menu[data-settings-value="middle"] .hovered li {
+  position: relative;
+  z-index: 20;
 }
 
 .tabs-sub-menu-item-hidden {
@@ -119,11 +158,11 @@
 }
 
 .tab-bg:before {
-  content: url("../icons/subtract-left.svg");
+  content: var(--tab-subtract-left);
   left: -12px;
 }
 .tab-bg:after {
-  content: url("../icons/subtract-right.svg");
+  content: var(--tab-subtract-right);
   right: -12px;
 }
 
@@ -185,7 +224,7 @@
 .tabs-sub-menu a,
 .tabs-sub-menu input {
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--text-color);
   text-align: center;
   font-size: 13px;
   font-family: "Poppins";
@@ -444,7 +483,7 @@
     padding: 6px;
     margin-bottom: 10px;
     background-color: var(--color-white);
-    color: var(--color-black);
+    color: var(--text-color);
     border-radius: 12px;
     font-family: "Poppins";
     font-size: 18px;

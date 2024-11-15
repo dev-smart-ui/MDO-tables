@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" data-settings="theme">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1"><title>
     Project Timeline | Mining Data Online
 </title>
@@ -38,7 +38,6 @@
     <link rel="stylesheet" type="text/css" href="css_0525/tables-of-results.css"/>
     <link rel="stylesheet" type="text/css" href="css_0525/tips-types.css"/>
     <link rel="stylesheet" type="text/css" href="css_0525/account-settings.css"/>
-    <link rel="stylesheet" type="text/css" href="css_0525/themes.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet"/>
 
     <script type="text/javascript">
@@ -575,19 +574,19 @@
                                     <li class="user-dropdown dropdown">
                                         <label for="user-menu">Alex Slautin</label>
                                         <ul class="submenu">
-                                            <li onclick="accountSettingsOpen({ tab: 0 })">
+                                            <li onclick="accountSettingsOpen(0)">
 												<a href="#">
                                                 <span class="user-menu-icon"><img src="/icons/login.svg"/></span>
                                                 <span>Account</span>
 												</a>
 											</li>
-                                            <li onclick="accountSettingsOpen({ tab: 3 })">
+                                            <li onclick="accountSettingsOpen(3)">
 												<a href="#">
                                                 <span class="user-menu-icon"><img src="/icons/settings.svg"/></span>
                                                 <span>Settings</span>
 												</a>
 											</li>
-                                            <li onclick="accountSettingsOpen({ tab: 2 })">
+                                            <li onclick="accountSettingsOpen(2)">
 												<a href="#">
                                                 <span class="user-menu-icon"><img
                                                         src="/icons/notifications.svg"/></span>
@@ -642,10 +641,9 @@
                                         <h3 class="signIn-modal-title">Sign In</h3>
                                         <div class="signIn-modal-header_mobile">
                                             <img
-                                                src="/icons/back.svg"
-                                                alt="Back"
-                                                class="signIn-modal-header_mobile-icon"
-                                                onclick="closeSignInModalWindow('.isSignInModalPosition', 'MainBody_Overview_pnlSignIn', false, false, true)"
+                                                    src="/icons/back.svg"
+                                                    alt="Back"
+                                                    class="signIn-modal-header_mobile-icon"
                                             />
                                             <h3 class="signIn-modal-header_mobile-title">Sign In</h3>
                                         </div>
@@ -700,37 +698,6 @@
                                         </div>
                                     </form> <!-- forma" -->
                                 </div>
-                                <div id="MainBody_Overview_pnlSettings" class="dialog">
-
-                                    <div class="signIn-modal-form">
-                                        <h3 class="signIn-modal-title">Settings</h3>
-                                        <div class="signIn-modal-header_mobile">
-                                            <img
-                                                src="/icons/back.svg"
-                                                alt="Back"
-                                                class="signIn-modal-header_mobile-icon"
-                                                onclick="closeSignInModalWindow('.isSettingsMenuModalPosition', 'MainBody_Overview_pnlSettings', false, false, true)"
-                                            />
-                                            <h3 class="signIn-modal-header_mobile-title">Settings</h3>
-                                        </div>
-                                        <div class="signIn-modal-fields">
-                                            <ul class="top-links main-nav">
-                                                <li onclick="accountSettingsOpen({ tab: 0, isMobile: true })">
-                                                    <a class="home" href="#">Account</a>
-                                                </li>
-                                                <li onclick="accountSettingsOpen({ tab: 1, isMobile: true })">
-                                                    <a class="contact goToContact" href="#">Subscription</a>
-                                                </li>
-                                                <li onclick="accountSettingsOpen({ tab: 2, isMobile: true })">
-                                                    <a class="news" href="#">Notifications</a>
-                                                </li>
-                                                <li onclick="accountSettingsOpen({ tab: 3, isMobile: true })">
-                                                    <a class="database" href="#">Settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="user-auth user-anauth">
                                 <div class="not-auth-user" style="transform: translateX(-1%)">
@@ -773,17 +740,6 @@
                                             <a class="sign-out"
                                                href="javascript:__doPostBack('ctl00$loginDeskTop$ctl00','')">
                                                 <span>Sign Out</span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a class="sign-out" onclick="signIn()">
-                                                <span>signIn (test)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sign-out" onclick="signIn('settingsMenu')">
-                                                <span>Settings (test)</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -861,7 +817,7 @@
 
         <div class="main-container">
             <aside class="sidebar">
-                <div class="sidebar-wrapper" data-settings="search_button_pos">
+                <div class="sidebar-wrapper">
                     <div class="sidebar-title sidebar-container">
                         <span class="sidebar-text title">SEARCH</span>
                         <span class="icon lock-tooltip" onclick="showInfo('MainBody_Overview_pnlHowTo')">
@@ -930,15 +886,6 @@
                                 <input id="txtCompanySearch" type="text" onkeydown="search">
                                 <button class="btn-add btn" type="button" onclick="btnAddClick()"><span>Add</span>
                                 </button>
-                            </div>
-                        </div>
-                        <div class="sidebar-buttons-block sidebar-buttons-block-top">
-                            <button id="btnReset" type="button" class="btn-reset btn" onclick="Reset();">
-                                <span>Reset</span>
-                            </button>
-                            <div id="btnSearch">
-                                <input type="submit" name="ctl00$btnSubmit" value="Search" onclick="PassValues();"
-                                       id="btnSubmit" class="btn-search btn"/>
                             </div>
                         </div>
                         <div class="search-criteria" id="search_criteria">
@@ -1078,7 +1025,7 @@
                                 <span id="lblSearchResults" class="search-results">11 assets.</span></div>
                         </div>
                     </div>
-                    <div class="sidebar-buttons-block sidebar-buttons-block-bottom">
+                    <div class="sidebar-buttons-block">
                         <button id="btnReset" type="button" class="btn-reset btn" onclick="Reset();">
                             <span>Reset</span>
                         </button>
@@ -1115,7 +1062,7 @@
                         </div>
                     </div>
 
-                    <div id="list_menu" class="list-menu" data-settings="elements_pos">
+                    <div id="list_menu" class="list-menu">
                         <div class="mobile-only mobile-header">
                             <h3 class="tabs-title">Categories</h3>
                             <button type="button" class="tabs-modal-close" onclick="tabsMobileToggle()">
@@ -7457,36 +7404,277 @@
 
         <div class="accountSettingsContent">
             <div class="accountSettingsContent__header">
-                <button class="back" onclick="closeSignInModalWindow('.isSettingsItemModalPosition', 'Account_Settings', false, true)">
-                    <img src="/icons/back.svg" alt="Back" class="signIn-modal-header_mobile-icon">
-                </button>
                 <span>Account</span>
                 <button type="button" class="tabs-modal-close" onclick="accountSettingsClose() ">
-                    <img class="modal-close-icon" src="icons/close.svg" alt="close">
+                    <img src="icons/close.svg" alt="close">
                 </button>
             </div>
 
             <div class="accountSettingsContent__tabs">
-                <div class="accountSettingsContent__tab custom-scroll accountSettingsAccount active" data-tabname="Account">
+                <div class="accountSettingsContent__tab accountSettingsAccount active" data-tabname="Account">
+                    In process
+                    <!-- <div class="accountSettingsAccount__controls">
+                        <button 
+                            class="active"
+                            onclick="setTab(
+                                '.accountSettingsAccount__controls button', '.accountSettingsAccount__tabs > div', 0
+                            )"
+                            >
+                            General Details
+                        </button>
+                        <button 
+                            onclick="setTab(
+                                '.accountSettingsAccount__controls button', '.accountSettingsAccount__tabs > div', 1
+                            )"
+                            >
+                            Additional Users
+                        </button>
+                    </div>
+                    <div class="accountSettingsAccount__tabs">
+                        <div class="active accountSettingsGroupWrap">
+                            <div class="accountSettingsGroup">
+                                <div class="accountSettingsGroup__title">Your details</div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="first_name">First Name</label>
+                                        <input id="first_name" name="first_name" type="text" value="Wade" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="last_name">Last Name</label>
+                                        <input id="last_name" name="last_name" type="text" value="Warren" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="phone">Phone</label>
+                                        <input id="phone" name="phone" type="text" value="(603) 555-0123" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="email">Email Address</label>
+                                        <input id="email" name="email" type="text" value="Warren89@gmail.com" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accountSettingsGroup">
+                                <div class="accountSettingsGroup__title">Security</div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="password">Password</label>
+                                        <input id="password" name="password" type="password" value="password" readonly>
+
+                                        <button>Reset Password</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accountSettingsGroup">
+                                <div class="accountSettingsGroup__title">Company details</div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="company_name">Company Name</label>
+                                        <input id="company_name" name="company_name" type="text" value="VG - Van Group" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="departament">Departament</label>
+                                        <input id="departament" name="departament" type="text" value="Marketing" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="position">Position</label>
+                                        <input id="position" name="position" type="text" value="Manager" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="address_1">Company Address 1</label>
+                                        <input id="address_1" name="address_1" type="text" value="5308 St Laurent Blvd, Montreal, Quebec H2T 1S1, Canada" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="address_2">Company Address 2</label>
+                                        <input id="address_2" name="address_2" type="text" value="109 Boulevard Curé-Poirier O, Longueuil, QC J4J 2G3, Canada" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="country">Country</label>
+                                        <input id="country" name="country" type="text" value="Canada" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="city">City</label>
+                                        <input id="city" name="city" type="text" value="Montreal" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="zip_code">Zip/Postal Code</label>
+                                        <input id="zip_code" name="zip_code" type="text" value="Quebec" readonly>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="state">State</label>
+                                        <input id="state" name="state" type="text" value="H1A 1E1" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accountSettingsGroupWrap">
+                            <div class="accountSettingsGroup">
+                                <div class="accountSettingsGroup__title">
+                                    Additional Users
+
+                                    <button>Add user </button>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="user_1">Esther Howard</label>
+                                        <input id="user_1" name="user_1" type="text" value="Warren89@gmail.com" readonly>
+                                    </div>
+                                    <div class="accountSettingsGroup__actions">
+                                        <button>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_3428_54570)">
+                                                <path d="M4 7H20" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_3428_54570">
+                                                <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>                                            
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="user_2">Robert Fox</label>
+                                        <input id="user_2" name="user_2" type="text" value="RFox@gmail.com" readonly>
+                                    </div>
+                                    <div class="accountSettingsGroup__actions">
+                                        <button>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_3428_54570)">
+                                                <path d="M4 7H20" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_3428_54570">
+                                                <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>                                            
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="accountSettingsGroup__field">
+                                    <div>
+                                        <label for="user_3">Jenny Wilson</label>
+                                        <input id="user_3" name="user_3" type="text" value="Wilson94@gmail.com" readonly>
+                                    </div>
+                                    <div class="accountSettingsGroup__actions">
+                                        <button>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_3428_54570)">
+                                                <path d="M4 7H20" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14 11V17" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#74879B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_3428_54570">
+                                                <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>                                            
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="accountSettingsContent__tab" data-tabname="Subscription">
                     In process
                 </div>
-                <div class="accountSettingsContent__tab custom-scroll" data-tabname="Subscription">
+                <div class="accountSettingsContent__tab" data-tabname="Notifications">
                     In process
+                    <!-- <div class="accountSettingsGroupWrap">
+                        <div class="accountSettingsGroup accountSettingsGroup--withoutLine">
+                            <div class="accountSettingsGroup__title">Notify me about... </div>
+                            <div class="accountSettingsGroup__field accountSettingsGroup__field--col">
+                                <div>
+                                    <div class="mdo-checkbox">
+                                        <input id="notify_mdo_news" type="checkbox" name="notify_mdo_news" checked="checked" value="1"/>
+                                        <label class="checkbox" for="notify_mdo_news">MDO News</label>
+                                    </div>
+                                    <div class="mdo-checkbox">
+                                        <input id="notify_mdo_proposals" type="checkbox" name="notify_mdo_proposals" checked="checked" value="1"/>
+                                        <label class="checkbox" for="notify_mdo_proposals">MDO proposals</label>
+                                    </div>
+                                    <div class="mdo-checkbox">
+                                        <input id="notify_mining_news" type="checkbox" name="notify_mining_news" value="1"/>
+                                        <label class="checkbox" for="notify_mining_news">Mining news</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accountSettingsGroup accountSettingsGroup--withoutLine">
+                            <div class="accountSettingsGroup__title">Notification schedule</div>
+                            <div class="accountSettingsGroup__field accountSettingsGroup__field--select">
+                                <div>
+                                    <label class="select" for="">Allow notifications</label>
+                                    <div class="custom-select">
+                                        <select id="accountSettingsNotificationsSelect1">
+                                            <option value="1">Every day</option>
+                                            <option value="2">Every day 2</option>
+                                            <option value="3">Every day 3</option>
+                                        </select>
+                                        <select id="accountSettingsNotificationsSelect2">
+                                            <option value="1">8:00 AM</option>
+                                            <option value="2">9:00 AM</option>
+                                            <option value="3">10:00 AM</option>
+                                        </select>
+                                        to
+                                        <select id="accountSettingsNotificationsSelect3">
+                                            <option value="1">11:00 AM</option>
+                                            <option value="2">12:00 AM</option>
+                                            <option value="3">13:00 AM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-                <div class="accountSettingsContent__tab custom-scroll" data-tabname="Notifications">
-                    In process
-                </div>
-                <div class="accountSettingsContent__tab custom-scroll" data-tabname="Settings" id="accountSettingsSettings">
+                <div class="accountSettingsContent__tab" data-tabname="Settings">
                     <div class="accountSettingsGroupWrap">
                         <div class="accountSettingsGroup accountSettingsGroup--withoutLine">
                             <div class="accountSettingsGroup__title">Color Theme</div>
                             <div class="accountSettingsGroup__field accountSettingsGroup__field--radio">
                                 <label class="radio">
-                                    <input id="theme_dark" type="radio" name="theme" value="dark"/>
+                                    <input id="theme_dark" type="radio" name="theme" checked value="dark"/>
                                     <span>Dark</span>
                                 </label>
                                 <label class="radio">
-                                    <input id="theme_light" type="radio" name="theme" value="light" checked/>
+                                    <input id="theme_light" type="radio" name="theme" value="light"/>
                                     <span>Light</span>
                                 </label>
                                 <label class="radio">
@@ -7536,9 +7724,6 @@
         document.dispatchEvent(tooltipEvent);
         document.dispatchEvent(autocompleteEvent);
         document.dispatchEvent(dialogEvent);
-
-        accountSettingsInit();
-        correctionSettingsElements();
     </script>
 
 

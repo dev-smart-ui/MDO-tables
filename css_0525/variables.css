@@ -84,5 +84,64 @@
     --header-mobile-nav-click: #D9DADE;
 
     --button-border-color: #c5c5c5;
+    
+    --body-color: #000;
 
+    --text-color: #000;
+
+    --text-header-color: #fff;
+
+    --input-bg: #fff;
+
+    --custom-scroll-gradient: #fafafa;
+
+    --tab-subtract-left: url("../icons/subtract-left.svg");
+
+    --tab-subtract-right: url("../icons/subtract-right.svg");
+
+    --modal-bg: #fff;
+
+    --modal-bg-aside: #fff;
+
+    --button_hover: #ededed;
+
+    --radio-bullet: #D2D2D2;
+
+    --line-grey-color: #E6E6E6;
+
+    --input-bg: #fff;
+
+}
+
+html[theme=dark] {
+    --main-bg-color: #292929;
+    --color-white: #333;
+    --table-main-background: #43434399;
+    --dropdown-item-hover: #252525;
+    --body-color: #fff;
+    --text-color: #fff;
+    --sibebar-select-bg-color: #cfcfcf40;
+    --input-bg: transparent;
+    --custom-scroll-gradient: #3c3c3c;
+    --checkbox-text-color: #fff;
+    --inactive-checkbox: #fff;
+    --tooltip-arrow-color: #E6E6E60D;
+    --tab-subtract-left: url("../icons/subtract-left-dark.svg");
+    --tab-subtract-right: url("../icons/subtract-right-dark.svg");
+    --table-background-hover-submenu: #333;
+    --table-gray-background: #454545;
+    --table-purple-background: #C9B0FF33;
+    --table-green-background: #AAFBA433;
+    --table-primary-background: #DEC4631A;
+    --table-secondary-background: #63AADE1A;
+    --table-background-hover-color: #43434399;
+    --modal-bg: #333;
+    --modal-bg-aside: #262626;
+    --button_hover: #000;
+    --radio-bullet: #FFFFFF33;
+    --line-grey-color: #EEEEEE1F;
+    --header-mobile-nav-bg-color: #43434399;
+    --input-bg: #FFFFFF0D;
+    --auth-checkbox-border: #fff;
+    --overlay-bg-color: #131517;
 }

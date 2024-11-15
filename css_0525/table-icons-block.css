@@ -18,7 +18,7 @@
   width: 24px;
   height: 24px;
   padding: 3px;
-  border: 1px solid var(--dropdown-item-hover);
+  border: 1px solid #7B7B7B;
   background-color: var(--color-white);
   border-radius: 6px;
   cursor: pointer;

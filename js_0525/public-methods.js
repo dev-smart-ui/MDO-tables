@@ -215,7 +215,16 @@ function search(event) {
 // Function to toggle the header menu
 function toggleHeaderMenu() {
   $('body').toggleClass('menu-open');
-  setTimeout(() => $('#MainBody_Overview_pnlSignIn').hide(), 300);
+
+  setTimeout(() => {
+    if (!$('body').hasClass('menu-open')) {
+      closeSignInModalWindow('.isSignInModalPosition', 'MainBody_Overview_pnlSignIn', true, false);
+      closeSignInModalWindow('.isSettingsMenuModalPosition', 'MainBody_Overview_pnlSettings', true, false);
+      closeSignInModalWindow('.isSettingsItemModalPosition', 'Account_Settings', true, true);
+
+      $('body').removeClass('signIn-modal-active');
+    }
+  }, 300);  
   
 	if(loggedIn == 1) // -- logged  user -- 
 	{
@@ -236,7 +245,11 @@ function toggleSidebarMobile() {
 function showInfo(id, options) {
   const windowWidth = window.innerWidth;
   const isMobile = windowWidth < 1150;
-  const { isSignInModal = false } = options || {};
+  const { 
+    isSignInModal = false, 
+    isSettingsMenuModal = false, 
+    isSettingsItemModal = false 
+  } = options || {};
   const dialogOptions = isSignInModal
     ? {
       modal: true,
@@ -258,16 +271,35 @@ function showInfo(id, options) {
   if (dialog.data('src')) {
     dialog.find('iframe').attr('src', dialog.data('src'));
   }
-  const helpMenu = dialog.dialog({
+
+  let dialogParams = {
     width: wWidth,
     height: wHeight,
-    classes: isSignInModal
-      ? { 'ui-dialog': 'isSignInModalPosition sign-in-animation-in' }
-      : {},
-    ...dialogOptions,
-  });
+    ...dialogOptions
+  }
+
+  if (isSignInModal) {
+    dialogParams.classes = {
+      'ui-dialog': 'isSignInModalPosition sign-in-animation-in'
+    }
+  }
+  
+  if (isSettingsMenuModal) {
+    dialogParams.classes = {
+      'ui-dialog': 'isSettingsMenuModalPosition sign-in-animation-in'
+    }
+  }
+
+  if (isSettingsItemModal) {
+    dialogParams.classes = {
+      'ui-dialog': 'isSettingsItemModalPosition sign-in-animation-in'
+    }
+  }
+
+  const helpMenu = dialog.dialog(dialogParams);
   helpMenu.dialog('open');
-  isSignInModal && isMobile && $('.signIn-modal-active .top-menu').animate({left: '-30%'});
+  (isSignInModal || isSettingsMenuModal) && isMobile && $('.signIn-modal-active .top-menu').animate({left: '-30%'});
+  (isSettingsItemModal) && isMobile && $('.isSettingsMenuModalPosition .dialog').animate({left: '-30%'});
 }
 
 // Function hanlde download dropdown
@@ -541,58 +573,103 @@ function changeCategory(e) {
   $('#tab_label').text(e.textContent);
 }
 
+const closeSignInModalWindow = (
+  modal, 
+  modalType, 
+  isMenuClosed, 
+  isSettingsItemModal,
+  isStart = false
+) => {
+  const MODAL = $(modal);
+  
+  if (!isDesktop) {
+    (
+      modalType === 'MainBody_Overview_pnlSettings' || 
+      modalType === 'MainBody_Overview_pnlSignIn'
+    ) && $('.signIn-modal-active .top-menu').animate({left: '0'}, 300);
+    
+    modalType === 'Account_Settings' && $('.signIn-modal-active #MainBody_Overview_pnlSettings').animate({left: '0'}, 300);
+
+    if (isMenuClosed) {
+      MODAL.removeClass('sign-in-visible')
+      setTimeout(() => {
+        MODAL.addClass('sign-in-hidden')
+        MODAL.removeClass('sign-in-animation-out')
+        setTimeout(() => {
+          MODAL.addClass('sign-in-animation-in')
+          setTimeout(() => {
+            MODAL.removeClass('sign-in-hidden')
+          }, 400)
+        }, 400)
+      }, 400)
+    } else {
+      MODAL.removeClass('sign-in-animation-out')
+      MODAL.addClass('sign-in-animation-in')
+    }
+  }
+
+  isSettingsItemModal && accountSettingsClose();
+  
+  setTimeout(() => {
+    const logo = $('.ui-dialog-titlebar #signIn-modal-logo');
+    if (logo.length) logo.remove();
+    isStart && $('body').removeClass('signIn-modal-active');
+    $(`#${modalType}`).hide()
+  }, isDesktop ? 0 : 300);
+}
+
 // Function to handle sign-in
-const signIn = () => {
+const signIn = (modalType = 'signIn') => {
+  const MODAL_TYPES = {
+    signIn: 'MainBody_Overview_pnlSignIn',
+    settingsMenu: 'MainBody_Overview_pnlSettings',
+    settingsItem: 'Account_Settings',
+  }
+
+  const MODAL_CLASSES = {
+    signIn: '.isSignInModalPosition',
+    settingsMenu: '.isSettingsMenuModalPosition',
+    settingsItem: '.isSettingsItemModalPosition',
+  }
+
+  if (!MODAL_TYPES[modalType]) return
+
+  const isSignInModal = modalType === 'signIn';
+  const isSettingsMenuModal = modalType === 'settingsMenu';
+  const isSettingsItemModal = modalType === 'settingsItem';
   const isDesktop = window.innerWidth > 1150;
+
   $('body').addClass('signIn-modal-active');
-  showInfo('MainBody_Overview_pnlSignIn', { isSignInModal: true });
-  const signInModal = $('.isSignInModalPosition');
-  signInModal.removeClass('sign-in-hidden')
-  signInModal.removeClass('sign-in-animation-in');
-  signInModal.addClass('sign-in-visible');
-  signInModal.addClass('sign-in-animation-out');
-  signInModal.css('opacity', '1');
+
+  // enable modal
+  showInfo(
+    MODAL_TYPES[modalType], 
+    { 
+      isSignInModal, 
+      isSettingsMenuModal, 
+      isSettingsItemModal 
+    }
+  );
+
+  const MODAL = $(MODAL_CLASSES[modalType]);
+
+  // animation show modal
+  MODAL.removeClass('sign-in-hidden')
+  MODAL.removeClass('sign-in-animation-in');
+  MODAL.addClass('sign-in-visible');
+  MODAL.addClass('sign-in-animation-out');
+  MODAL.css('opacity', '1');
+
+  // ???
   if (!$('.ui-dialog-titlebar').find('#signIn-modal-logo').length) {
     $('.ui-dialog-titlebar').append(
       "<img id='signIn-modal-logo' src='/images/logo.svg' alt='MDO' title='Mining Data Online'>"
     );
   }
-  const closeSignInModalWindow = (isMenuClosed) => {
-    if (!isDesktop) {
-      $('.signIn-modal-active .top-menu').animate({left: '0'}, 300)
-      if (isMenuClosed) {
-        signInModal.removeClass('sign-in-visible')
-        setTimeout(() => {
-          signInModal.addClass('sign-in-hidden')
-          signInModal.removeClass('sign-in-animation-out')
-          setTimeout(() => {
-            signInModal.addClass('sign-in-animation-in')
-            setTimeout(() => {
-              signInModal.removeClass('sign-in-hidden')
-            }, 400)
-          }, 400)
-        }, 400)
-      } else {
-        signInModal.removeClass('sign-in-animation-out')
-        signInModal.addClass('sign-in-animation-in')
-      }
-    }
-    setTimeout(() => {
-      const logo = $('.ui-dialog-titlebar #signIn-modal-logo');
-      if (logo.length) logo.remove();
-      $('body').removeClass('signIn-modal-active');
-    }, isDesktop ? 0 : 300);
-  }
-  $('.header-menu-button').one('click', () => {
-    closeSignInModalWindow(true);
-  });
-  $('.signIn-modal-header_mobile-icon').one('click', () => {
-    closeSignInModalWindow(false);
-    setTimeout(() => $('#MainBody_Overview_pnlSignIn').hide(), 300);
-  });
+
   if (isDesktop) {
     $('.ui-dialog-titlebar-close').one('click', () => {
-      closeSignInModalWindow(false);
+      closeSignInModalWindow(MODAL_CLASSES[modalType], MODAL_TYPES[modalType], false, isSettingsItemModal);
     });
   }
 };
@@ -813,4 +890,144 @@ function debounce(func, delay) {
           func.apply(context, args);
       }, delay);
   };
+}
+
+const accountSettingsUpdate = (tab) => {
+  const titleNode = document.querySelector('.accountSettingsContent__header span');
+
+  setTab(
+    '.accountSettingsAside__controls button', 
+    '.accountSettingsContent__tab', 
+    tab, 
+    (node) => {
+      const tabName = node.dataset.tabname;
+      titleNode.innerHTML = tabName;
+    }
+  );
+}
+
+const accountSettingsOpen = ({ tab, isMobile } = {}) => {
+  typeof tab !== undefined && accountSettingsUpdate(tab);
+
+  if (isMobile) {
+    signIn('settingsItem');
+  } else {
+    showInfo('Account_Settings');
+  }  
+}
+
+const accountSettingsClose = () => {
+  $('#Account_Settings').dialog('close')
+}
+
+const setTab = (controls, tabs, index, tabCallback = () => {}) => {
+  const controlNodes = document.querySelectorAll(controls);
+  const tabNodes = document.querySelectorAll(tabs);
+
+  controlNodes.forEach((node, i) => {
+    if (index === i) {
+      node.disabled = true;
+      node.classList.add('active')
+    } else {
+      node.disabled = false;
+      node.classList.remove('active')
+    }
+  });
+
+  tabNodes.forEach((node, i) => {
+    if (index === i) {
+      node.classList.add('active');
+      tabCallback(node);
+    } else {
+      node.classList.remove('active')
+    }
+  });
+}
+
+const applyAccountSettings = (key, value) => {
+  try {
+    if (!key || !value) throw 'Missing data for apply settings!'
+
+    const nodes = document.querySelectorAll(`[data-settings=${key}]`);
+
+    if (!nodes.length) throw 'Settings nodes not found!';
+
+    nodes.forEach(node => {
+      if (key === 'theme') {
+        if (value === 'system') {
+          const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          node.setAttribute('theme', isDarkMode ? 'dark' : 'light');
+        } else {
+          node.setAttribute('theme', value);
+        }        
+      } else {
+        node.setAttribute('data-settings-value', value);
+      }
+    });
+
+    correctionSettingsElements();
+
+  } catch(err) {
+    console.warn(err);
+  }
+}
+
+const accountSettingsInit = () => {
+  try {
+    const dataNodes = document.querySelectorAll('#accountSettingsSettings input[type=radio]');
+    let settingsNames = [];
+    let savedSettings = {}
+    
+    dataNodes.forEach(node => {
+      if (!settingsNames.includes(node.name)) {
+        settingsNames.push(node.name);
+      }
+
+      node.addEventListener('change', e => {
+        localStorage.setItem(e.target.name, e.target.value);
+        applyAccountSettings(e.target.name, e.target.value);
+      })
+    });
+
+    settingsNames.forEach(name => {
+      const saved = localStorage.getItem(name);
+      if (saved) {
+        savedSettings[name] = saved
+      }
+    });
+
+    for(let key in savedSettings) {
+      const currentNodes = document.querySelectorAll(`#accountSettingsSettings input[name=${key}]`);
+
+      currentNodes.forEach(node => {
+        if (node.value === savedSettings[key]) {
+          node.checked = true
+          applyAccountSettings(node.name, node.value);
+        } else {
+          node.checked = false
+        }
+      })
+    }
+  } catch(err) {
+    console.warn(err);
+  }
+}
+
+function correctionSettingsElements() {
+  try {
+    const submenus = document.querySelectorAll('.tabs-sub-menu');
+
+    console.log(submenus);
+
+    submenus.forEach(menu => {
+      const rect = menu.getBoundingClientRect();
+
+      if (rect.right > (window.innerWidth || document.documentElement.clientWidth)) {
+        menu.style.right = '0';
+        menu.style.width = 'auto';
+      }
+    });
+  } catch(err) {
+    console.warn(err);
+  }
 }

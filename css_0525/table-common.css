@@ -25,7 +25,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.125em;
-  color: var(--color-black);
+  color: var(--text-color);
   background-color: var(--table-main-background);
   height: 100%;
   padding: 5px;
@@ -368,7 +368,7 @@ th.year {
   font-size: 14px;
   font-family: "Poppins";
   font-weight: 500;
-  color: var(--color-black);
+  color: var(--text-color);
 }
 
 td:not(.asset-label) {
