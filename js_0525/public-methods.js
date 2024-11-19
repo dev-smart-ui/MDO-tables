@@ -218,11 +218,9 @@ function toggleHeaderMenu() {
 
   setTimeout(() => {
     if (!$('body').hasClass('menu-open')) {
-      closeSignInModalWindow('.isSignInModalPosition', 'MainBody_Overview_pnlSignIn', true, false);
-      closeSignInModalWindow('.isSettingsMenuModalPosition', 'MainBody_Overview_pnlSettings', true, false);
-      closeSignInModalWindow('.isSettingsItemModalPosition', 'Account_Settings', true, true);
-
-      $('body').removeClass('signIn-modal-active');
+      closeSignInModalWindow('.isSignInModalPosition', 'MainBody_Overview_pnlSignIn', false, false, true);
+      closeSignInModalWindow('.isSettingsMenuModalPosition', 'MainBody_Overview_pnlSettings', false, false, true);
+      closeSignInModalWindow('.isSettingsItemModalPosition', 'Account_Settings', false, true, true);
     }
   }, 300);  
   

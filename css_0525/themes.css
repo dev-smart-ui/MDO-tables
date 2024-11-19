@@ -3,11 +3,7 @@
 html[theme=dark] .modal-close-icon, 
 html[theme=dark] .top-links li a:before, 
 html[theme=dark] .signIn-modal-header_mobile-icon, 
-html[theme=dark] .ui-dialog .ui-button .ui-icon:not(.ui-selectmenu-icon) {
+html[theme=dark] .ui-dialog .ui-button .ui-icon:not(.ui-selectmenu-icon), 
+.tabs-modal-close img {
   filter: invert(1);
-}
-
-html[theme=dark] .ps__thumb-x:before, 
-html[theme=dark] .ps__thumb-y:before {
-  background: #43434399;
-}
+} 

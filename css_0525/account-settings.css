@@ -338,6 +338,7 @@
 
 .radio--media img {
   margin-top: 24px;
+  max-width: 100%;
 }
 
 .accountSettingsContent__header button.back {

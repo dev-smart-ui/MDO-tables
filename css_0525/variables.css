@@ -17,6 +17,8 @@
 
     --table-main-background: #FAFAFA;
 
+    --table-sec-background: #FAFAFA;
+
     --table-border-color: #E7E7E7;
 
     --table-border-color-dark: #DADADA;
@@ -95,6 +97,8 @@
 
     --custom-scroll-gradient: #fafafa;
 
+    --custom-scroll-sec: #aaa;
+
     --tab-subtract-left: url("../icons/subtract-left.svg");
 
     --tab-subtract-right: url("../icons/subtract-right.svg");
@@ -117,6 +121,7 @@ html[theme=dark] {
     --main-bg-color: #292929;
     --color-white: #333;
     --table-main-background: #43434399;
+    --table-sec-background: #404040;
     --dropdown-item-hover: #252525;
     --body-color: #fff;
     --text-color: #fff;
@@ -144,4 +149,5 @@ html[theme=dark] {
     --input-bg: #FFFFFF0D;
     --auth-checkbox-border: #fff;
     --overlay-bg-color: #131517;
+    --custom-scroll-sec: #fff;
 }
